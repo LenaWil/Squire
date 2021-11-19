@@ -29,7 +29,23 @@ class LightUserTheme(SquireUserTheme):
 class DarkUserTheme(SquireUserTheme):
     """ Dark Mode """
     name = "Dark Mode"
-    css = LightUserTheme.css + ('themes/dark-theme.css',) #here, so it's consistent 
+    css = LightUserTheme.css + ('themes/dark-theme.css',) #here, so it's consitent 
+
+""" class DefaultAutoTheme(SquireUserTheme):
+    name = "auto"
+    @property
+    def css(): 
+        raise Exception("Not def")
+    
+    light_theme = DefaultUserTheme().css
+    dark_theme = DarkUserTheme().css
+    css = light_theme + dark_theme + ("themes/auto.css",)
+    js = ('themes/auto.js',)
+    raw_js = (f"var DARK_THEME = '{self.dark_theme}';",f"var LIGHT_THEME = '{self.light_theme}'")
+
+    def get_css(self):
+        return format_html_join("\n", "<link id='auto-theme-stylesheet' rel='stylesheet' href='{}'>", ((StaticNode.handle_simple(x),) for x in self.light_theme));
+ """
 
 class DefaultAutoTheme(SquireUserTheme):
     name = "Automatically switch between dark and light"
@@ -81,4 +97,4 @@ THEMES = {
     'THEME_SCALA': ScalaUserTheme,
 }
 
-DEFAULT_THEME = 'THEME_DEFAULT'
+DEFAULT_THEME = 'THEME_AUTO'
