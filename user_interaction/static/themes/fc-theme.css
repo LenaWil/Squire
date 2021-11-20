@@ -39,6 +39,9 @@
     --greenify-dropdown-hover-text-color: inherit;
     --greenify-dropdown-active-bg-color: var(--greenify-bg-color);
     --greenify-dropdown-active-text-color: var(--greenify-text-color);
+
+    --greenify-scrollbar: var(--body-bg-color);
+    --greenify-scrollbar-bg: var(--greenify-dark-bg-color);
 }
 
 p {

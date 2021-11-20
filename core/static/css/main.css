@@ -5,6 +5,7 @@ COLOUR SCHEME
 body {
     background-color: var(--body-bg-color);
     color: var(--body-text-color);
+    
 }
 
 /* Headers and bold text have a slightly greenish colour */
@@ -80,7 +81,18 @@ FORMATTING
     when the page does not fill the entire viewport */
 html {
     height: 100%;
+    scrollbar-color: var(--greenify-scrollbar) var(--greenify-scrollbar-bg);
 }
+
+html::-webkit-scrollbar {
+    background-color: var(--greenify-scrollbar-bg);
+}
+
+html::-webkit-scrollbar-thumb, html::-webkit-scrollbar-butto,  html::-webkit-scrollbar-corne, html::-webkit-scrollbar-trac, html::-webkit-scrollbar-track-piec {
+    background-color: var(--greenify-scrollbar); //buggy as hell
+}
+
+
 
 body {
     min-height: 100%;

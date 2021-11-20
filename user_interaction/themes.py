@@ -17,6 +17,8 @@ class SquireUserTheme:
 
     def get_raw_js(self):
         return mark_safe(f"<script>{';'.join(self.raw_js)}</script>")
+        return mark_safe(format_html_join("\n", "<script>{}</script>", (x for x in self.raw_js)))
+
 
     def __str__(self):
         return self.name

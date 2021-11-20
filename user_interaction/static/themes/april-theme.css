@@ -39,6 +39,9 @@
     --greenify-dropdown-hover-text-color: inherit;
     --greenify-dropdown-active-bg-color: var(--greenify-bg-color);
     --greenify-dropdown-active-text-color: var(--greenify-text-color);
+
+    --greenify-scrollbar: var(--title-text-color);
+    --greenify-scrollbar-bg: var(--greenify-dark-bg-color);
 }
 
 .text-muted, .april-footer, .april-ad {
@@ -46,7 +49,7 @@
 }
 
 body {
-    font-family: "Comic Sans MS", "Comic Sans", "cursive" !important;
+    font-family: "Comic Sans MS", "Comic Sans", cursive, fantasy !important;
 }
 
 /* Cookie Stealing & Party Parrots */
