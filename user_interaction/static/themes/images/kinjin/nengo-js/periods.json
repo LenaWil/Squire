@@ -1,0 +1,402 @@
+[
+    {
+        "startYear": 1615,
+        "startMonth": 9,
+        "startDay": 5,
+        "names": {
+            "kanji": "元和",
+            "hiragana": "げんな",
+            "english": "Genna"
+        }
+    },
+    {
+        "startYear": 1624,
+        "startMonth": 4,
+        "startDay": 17,
+        "names": {
+            "kanji": "寛永",
+            "hiragana": "かんえい",
+            "english": "Ka'ei"
+        }
+    },
+    {
+        "startYear": 1644,
+        "startMonth": 1,
+        "startDay": 13,
+        "names": {
+            "kanji": "正保",
+            "hiragana": "しょうほう",
+            "english": "Shōhō"
+        }
+    },
+    {
+        "startYear": 1648,
+        "startMonth": 4,
+        "startDay": 7,
+        "names": {
+            "kanji": "慶安",
+            "hiragana": "けいあん",
+            "english": "Keian"
+        }
+    },
+    {
+        "startYear": 1652,
+        "startMonth": 10,
+        "startDay": 20,
+        "names": {
+            "kanji": "承応",
+            "hiragana": "じょうおう",
+            "english": "Jōō"
+        }
+    },
+    {
+        "startYear": 1655,
+        "startMonth": 5,
+        "startDay": 18,
+        "names": {
+            "kanji": "明暦",
+            "hiragana": "へいれき",
+            "english": "Meireki"
+        }
+    },
+    {
+        "startYear": 1658,
+        "startMonth": 8,
+        "startDay": 21,
+        "names": {
+            "kanji": "万治",
+            "hiragana": "まんじ",
+            "english": "Manji"
+        }
+    },
+    {
+        "startYear": 1661,
+        "startMonth": 5,
+        "startDay": 23,
+        "names": {
+            "kanji": "寛文",
+            "hiragana": "かんぶん",
+            "english": "Kanbun"
+        }
+    },
+    {
+        "startYear": 1673,
+        "startMonth": 10,
+        "startDay": 30,
+        "names": {
+            "kanji": "延宝",
+            "hiragana": "えんぽう",
+            "english": "Enpō"
+        }
+    },
+    {
+        "startYear": 1681,
+        "startMonth": 11,
+        "startDay": 9,
+        "names": {
+            "kanji": "天和",
+            "hiragana": "てんな",
+            "english": "Tenna"
+        }
+    },
+    {
+        "startYear": 1684,
+        "startMonth": 4,
+        "startDay": 5,
+        "names": {
+            "kanji": "貞享",
+            "hiragana": "じょうきょう",
+            "english": "Jōkyō"
+        }
+    },
+    {
+        "startYear": 1688,
+        "startMonth": 10,
+        "startDay": 23,
+        "names": {
+            "kanji": "元禄",
+            "hiragana": "げんろく",
+            "english": "Genroku"
+        }
+    },
+    {
+        "startYear": 1704,
+        "startMonth": 4,
+        "startDay": 16,
+        "names": {
+            "kanji": "宝永",
+            "hiragana": "ほうえい",
+            "english": "Hōei"
+        }
+    },
+    {
+        "startYear": 1711,
+        "startMonth": 6,
+        "startDay": 11,
+        "names": {
+            "kanji": "正徳",
+            "hiragana": "しょうとく",
+            "english": "Shōtoku"
+        }
+    },
+    {
+        "startYear": 1716,
+        "startMonth": 8,
+        "startDay": 9,
+        "names": {
+            "kanji": "享保",
+            "hiragana": "きょうほう",
+            "english": "Kyōhō"
+        }
+    },
+    {
+        "startYear": 1736,
+        "startMonth": 6,
+        "startDay": 7,
+        "names": {
+            "kanji": "元文",
+            "hiragana": "げんぶん",
+            "english": "Genbun"
+        }
+    },
+    {
+        "startYear": 1741,
+        "startMonth": 4,
+        "startDay": 12,
+        "names": {
+            "kanji": "寛保",
+            "hiragana": "かんぽう",
+            "english": "Kanpō"
+        }
+    },
+    {
+        "startYear": 1744,
+        "startMonth": 4,
+        "startDay": 3,
+        "names": {
+            "kanji": "延享",
+            "hiragana": "えんきょう",
+            "english": "Enkyō"
+        }
+    },
+    {
+        "startYear": 1748,
+        "startMonth": 8,
+        "startDay": 5,
+        "names": {
+            "kanji": "寛延",
+            "hiragana": "かんえん",
+            "english": "Ka'en"
+        }
+    },
+    {
+        "startYear": 1751,
+        "startMonth": 12,
+        "startDay": 14,
+        "names": {
+            "kanji": "宝暦",
+            "hiragana": "ほうれき",
+            "english": "Hōreki"
+        }
+    },
+    {
+        "startYear": 1764,
+        "startMonth": 6,
+        "startDay": 30,
+        "names": {
+            "kanji": "明和",
+            "hiragana": "めいわ",
+            "english": "Meiwa"
+        }
+    },
+    {
+        "startYear": 1772,
+        "startMonth": 12,
+        "startDay": 10,
+        "names": {
+            "kanji": "安永",
+            "hiragana": "あんえい",
+            "english": "A'ei"
+        }
+    },
+    {
+        "startYear": 1781,
+        "startMonth": 4,
+        "startDay": 25,
+        "names": {
+            "kanji": "天明",
+            "hiragana": "てんめい",
+            "english": "Tenmei"
+        }
+    },
+    {
+        "startYear": 1789,
+        "startMonth": 2,
+        "startDay": 19,
+        "names": {
+            "kanji": "寛政",
+            "hiragana": "かんせい",
+            "english": "Kansei"
+        }
+    },
+    {
+        "startYear": 1801,
+        "startMonth": 3,
+        "startDay": 19,
+        "names": {
+            "kanji": "享和",
+            "hiragana": "きょうわ",
+            "english": "Kyōwa"
+        }
+    },
+    {
+        "startYear": 1804,
+        "startMonth": 3,
+        "startDay": 22,
+        "names": {
+            "kanji": "文化",
+            "hiragana": "ぶんか",
+            "english": "Bunka"
+        }
+    },
+    {
+        "startYear": 1818,
+        "startMonth": 5,
+        "startDay": 26,
+        "names": {
+            "kanji": "文政",
+            "hiragana": "ぶんせい",
+            "english": "Bunsei"
+        }
+    },
+    {
+        "startYear": 1831,
+        "startMonth": 1,
+        "startDay": 23,
+        "names": {
+            "kanji": "天保",
+            "hiragana": "てんぽう",
+            "english": "Tenpō"
+        }
+    },
+    {
+        "startYear": 1845,
+        "startMonth": 1,
+        "startDay": 9,
+        "names": {
+            "kanji": "弘化",
+            "hiragana": "こうか",
+            "english": "Kōka"
+        }
+    },
+    {
+        "startYear": 1848,
+        "startMonth": 4,
+        "startDay": 1,
+        "names": {
+            "kanji": "嘉永",
+            "hiragana": "かえい",
+            "english": "Kaei"
+        }
+    },
+    {
+        "startYear": 1855,
+        "startMonth": 1,
+        "startDay": 15,
+        "names": {
+            "kanji": "安政",
+            "hiragana": "あんせい",
+            "english": "Ansei"
+        }
+    },
+    {
+        "startYear": 1860,
+        "startMonth": 4,
+        "startDay": 8,
+        "names": {
+            "kanji": "万延",
+            "hiragana": "まんえん",
+            "english": "Ma'en"
+        }
+    },
+    {
+        "startYear": 1861,
+        "startMonth": 3,
+        "startDay": 29,
+        "names": {
+            "kanji": "文久",
+            "hiragana": "ぶんきゅう",
+            "english": "Bunkyū"
+        }
+    },
+    {
+        "startYear": 1864,
+        "startMonth": 3,
+        "startDay": 27,
+        "names": {
+            "kanji": "元治",
+            "hiragana": "げんじ",
+            "english": "Genji"
+        }
+    },
+    {
+        "startYear": 1865,
+        "startMonth": 5,
+        "startDay": 1,
+        "names": {
+            "kanji": "慶応",
+            "hiragana": "けいおう",
+            "english": "Keiou"
+        }
+    },
+    {
+        "startYear": 1868,
+        "startMonth": 10,
+        "startDay": 23,
+        "names": {
+            "kanji": "明治",
+            "hiragana": "めいじ",
+            "english": "Meiji"
+        }
+    },
+    {
+        "startYear": 1912,
+        "startMonth": 7,
+        "startDay": 30,
+        "names": {
+            "kanji": "大正",
+            "hiragana": "たいしょう",
+            "english": "Taisho"
+        }
+    },
+    {
+        "startYear": 1926,
+        "startMonth": 12,
+        "startDay": 25,
+        "names": {
+            "kanji": "昭和",
+            "hiragana": "しょうわ",
+            "english": "Showa"
+        }
+    },
+    {
+        "startYear": 1989,
+        "startMonth": 1,
+        "startDay": 8,
+        "names": {
+            "kanji": "平成",
+            "hiragana": "へいせい",
+            "english": "Heisei"
+        }
+    },
+    {
+        "startYear": 2019,
+        "startMonth": 5,
+        "startDay": 1,
+        "names": {
+            "kanji": "令和",
+            "hiragana": "れいわ",
+            "english": "Reiwa"
+        }
+    }
+]

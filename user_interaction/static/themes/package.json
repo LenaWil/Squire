@@ -1,0 +1,15 @@
+{
+  "name": "themes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "kinjin.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@types/jquery": "^3.5.9",
+    "tsc": "^2.0.3"
+  }
+}

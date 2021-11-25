@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "allowJs": true,
+        "checkJs": true,
+        "outDir": "build",
+        "lib": [
+            "DOM",
+            "ESNext",
+            "ES2021",
+        ],
+
+    }
+}
