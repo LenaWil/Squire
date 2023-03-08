@@ -14,7 +14,7 @@ def get_secret_key(filePath: str, enableMessages: bool = False) -> str:
     try:
         secretfile = filePath
         with open(secretfile) as f:
-            secret = f.read().strip()
+            secret=f.read().strip()
     except FileNotFoundError:
         from django.core.management.utils import get_random_secret_key
         if enableMessages: #pragma: prod-msg
