@@ -23,7 +23,7 @@ jobs:
       - uses: psf/black@stable
         if: steps.changed-files.outputs.all_changed_files != ''
         with:
-          # formatting all the files, since filtering didn’t work, and then filtering them
+          # formatting all the files, since filtering didn’t work, and then filtering them manually
           # src: "${{ steps.changed-files.outputs.all_changed_files }}" 
           options: ""
       - run: git diff --exit-code -- ${{ steps.changed-files.outputs.all_changed_files }}

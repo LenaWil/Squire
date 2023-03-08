@@ -3,7 +3,7 @@ name: Lint black pull request comments
 on: [pull_request]
 
 jobs:
-  lint-git-pr-comments:
+  lint-git-pr-comments-action-suggester:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -15,3 +15,13 @@ jobs:
         with:
           tool_name: blackfmt
           fail_on_error: false
+  lint-git-pr-comments-reviewdog-black:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: reviewdog/action-black@v3
+        with:
+          reporter: github-pr-check
+          level: error
+          fail_on_error: false
+          filter_mode: added
