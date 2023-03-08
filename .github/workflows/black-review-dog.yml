@@ -6,12 +6,10 @@ jobs:
   lint-git-pr-comments:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: psf/black@stable
+      - uses: actions/checkout@v3
+      - uses: reviewdog/action-black@v3
         with:
-          options: ""
-      - name: Comment the git pr
-        uses: reviewdog/action-suggester@v1
-        with:
-          tool_name: blackfmt
+          reporter: github-pr-check
+          level: error
           fail_on_error: true
+          filter_mode: file
