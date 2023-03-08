@@ -1,4 +1,4 @@
-name: black-reviewdog
+name: Lint black pull request comments
 
 on: [pull_request]
 
@@ -7,9 +7,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: reviewdog/action-black@v3
+      - uses: psf/black@stable
         with:
-          reporter: github-pr-check
-          level: error
+          options: ""
+      - name: Comment the git pr
+        uses: reviewdog/action-suggester@v1
+        with:
+          tool_name: blackfmt
           fail_on_error: true
-          filter_mode: file
