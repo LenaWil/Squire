@@ -24,7 +24,7 @@ jobs:
         if: steps.changed-files.outputs.all_changed_files != ''
         with:
           # formatting all the files, since filtering didn’t work, and then filtering them manually
-          # src: "${{ steps.changed-files.outputs.all_changed_files }}" 
+          # src: "${{ steps.changed-files.outputs.all_changed_files }}"
           options: ""
       - run: git diff --exit-code -- ${{ steps.changed-files.outputs.all_changed_files }}
         if: steps.changed-files.outputs.all_changed_files != ''

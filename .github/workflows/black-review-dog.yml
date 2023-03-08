@@ -15,13 +15,3 @@ jobs:
         with:
           tool_name: blackfmt
           fail_on_error: false
-  lint-git-pr-comments-reviewdog-black:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: reviewdog/action-black@v3
-        with:
-          reporter: github-pr-check
-          level: error
-          fail_on_error: false
-          filter_mode: added
