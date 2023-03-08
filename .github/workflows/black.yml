@@ -33,7 +33,7 @@ jobs:
         run: |
           TMPFILE=$(mktemp)
           git diff -- ${{ steps.changed-files.outputs.all_changed_files }} > "${TMPFILE}"
-          reviewdog -f=diff -f.diff.strip=1 -reporter=github-pr-review < "${TMPFILE}"
-          reviewdog -f=diff -f.diff.strip=1 -reporter=github-pr-check  < "${TMPFILE}"
+          reviewdog -f=diff -f.diff.strip=1 -reporter=github-pr-review < "${TMPFILE}" | true
+          reviewdog -f=diff -f.diff.strip=1 -reporter=github-pr-check  < "${TMPFILE}" | true
       - run: git diff --exit-code -- ${{ steps.changed-files.outputs.all_changed_files }}
         if: steps.changed-files.outputs.all_changed_files != ''
