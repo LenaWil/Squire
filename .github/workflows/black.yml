@@ -20,8 +20,7 @@ jobs:
           # formatting all the files, since filtering didn’t work, and then filtering them manually
           # src: "${{ steps.changed-files.outputs.all_changed_files }}"
           options: ""
-      - &git-diff
-        name: (Files that are incorrectly formatted) ∩ (Files that have been changed in this commit or pull request)
+      - name: (Files that are incorrectly formatted) ∩ (Files that have been changed in this commit or pull request)
         run: git diff --exit-code -- ${{ steps.changed-files.outputs.all_changed_files }} | tee ./review-dog.diff
         if: steps.changed-files.outputs.all_changed_files != ''
         continue-on-error: true
@@ -32,8 +31,6 @@ jobs:
           -name=blackfmt
           -f=diff
           -reporter=github-pr-check
-          -fail_on_error=true
+          -fail-on-error=true
           < ./review-dog.diff
         if: steps.changed-files.outputs.all_changed_files != ''
-      - <<: *git-diff
-        continue-on-error: false
