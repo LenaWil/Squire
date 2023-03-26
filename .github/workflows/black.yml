@@ -20,15 +20,20 @@ jobs:
           # formatting all the files, since filtering didn’t work, and then filtering them manually
           # src: "${{ steps.changed-files.outputs.all_changed_files }}"
           options: ""
-      - name: Comment the git pr
-        uses: reviewdog/action-suggester@v1
+      - &git-diff
+        name: (Files that are incorrectly formatted) ∩ (Files that have been changed in this commit or pull request)
+        run: git diff --exit-code -- ${{ steps.changed-files.outputs.all_changed_files }} | tee ./review-dog.diff
         if: steps.changed-files.outputs.all_changed_files != ''
-        with:
-          tool_name: blackfmt
-          fail_on_error: false
-          cleanup: false
-          reviewdog_flags: -reporter=github-check
         continue-on-error: true
-      - name: (Files that are incorrectly formatted) ∩ (Files that have been changed in this commit or pull request)
-        run: git diff --exit-code -- ${{ steps.changed-files.outputs.all_changed_files }}
+      - uses: reviewdog/action-setup@v1
+      - name: Comment the git pr
+        run: >-
+          reviewdog
+          -name=blackfmt
+          -f=diff
+          -reporter=github-pr-check
+          -fail_on_error=true
+          < ./review-dog.diff
         if: steps.changed-files.outputs.all_changed_files != ''
+      - <<: *git-diff
+        continue-on-error: false
