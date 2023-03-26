@@ -30,7 +30,7 @@ jobs:
           REVIEWDOG_GITHUB_API_TOKEN: ${{ github.token }}
         run: >-
           reviewdog
-          -name=blackfmt
+          -name=lint-changed
           -f=diff
           -reporter=github-pr-check
           -fail-on-error=true
