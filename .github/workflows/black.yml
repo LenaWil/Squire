@@ -27,7 +27,7 @@ jobs:
           tool_name: blackfmt
           fail_on_error: false
           cleanup: false
-          reviewdog_flags: -reporter="github-check"
+          reviewdog_flags: -reporter=github-check
         continue-on-error: true
       - name: (Files that are incorrectly formatted) ∩ (Files that have been changed in this commit or pull request)
         run: git diff --exit-code -- ${{ steps.changed-files.outputs.all_changed_files }}
