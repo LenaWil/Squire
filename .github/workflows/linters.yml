@@ -1,10 +1,10 @@
-name: Lint Black main
+name: Lint main file
 
 # Without review-dog… maybe it’s a bit of waste to make them run twice, but anyway.
 on: [push, pull_request]
 
 jobs:
-  lint-changed:
+  lint-changed-black:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -37,3 +37,23 @@ jobs:
       - name: (Files that are incorrectly formatted) ∩ (Files that have been changed in this commit or pull request)
         run: git diff --exit-code -- ${{ steps.changed-files.outputs.all_changed_files }}
         if: steps.changed-files.outputs.all_changed_files != ''
+  lint-pflake8-all:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Cache dependencies # caching dependency will make our build faster.
+        uses: actions/cache@v3 # for more info checkout pip section documentation at https://github.com/actions/cache
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements/*.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+      - name: Setup Python Environment
+        uses: actions/setup-python@v4
+        with: 
+          python-version: "${{ matrix.python }}"
+      - name: Install requirements
+        run: pip install -r requirements/ci.txt
+      - name: run pflake8
+        run: pflake8
+

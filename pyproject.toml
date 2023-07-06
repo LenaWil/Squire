@@ -1,3 +1,34 @@
 [tool.black]
 line-length = 119
 extend-exclude = "(.*/migrations/.*.py)"
+
+[tool.pylint.format]
+max-line-length = 119
+
+[tool.flake8]
+ignore = [
+    # Missing docstring
+    "D1",
+    # Missing blank line after last docstring section
+    "D413",
+    # Makes it possible to split long (boolean) equations on multiple lines
+    "W503",
+    #black
+    "E203",
+    # Because this should check for the same things as Black and we still haven’t updated the entire code base
+    "E",
+    "W",
+    ]
+extend-select = [
+    "W504",
+    ]
+extend-exclude = [
+    "./.git",
+    "./__pycache__",
+    "*/migrations",
+    "./venv",
+    "./.venv",
+    "./lib"
+    ]
+max-complexity = 10
+max-line-length = 119
