@@ -1,0 +1,6 @@
+#!include:.gitignore
+
+#ignore minified files
+*.min.*
+# ignore .html
+*.html

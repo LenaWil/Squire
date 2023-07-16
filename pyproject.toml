@@ -2,6 +2,10 @@
 line-length = 119
 extend-exclude = "(.*/migrations/.*.py)"
 
+[tool.isort]
+profile = "black"
+line_length = 119
+
 [tool.pylint.format]
 max-line-length = 119
 

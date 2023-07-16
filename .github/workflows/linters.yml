@@ -20,6 +20,17 @@ jobs:
           # formatting all the files, since filtering didn’t work, and then filtering them manually
           # src: "${{ steps.changed-files.outputs.all_changed_files }}"
           options: ""
+      - name: Setup Python Environment
+        uses: actions/setup-python@v4
+        with:
+          python-version: "${{ matrix.python }}"
+      - name: run isort
+        run: isort --atomic .
+      - name: run prettier formatting #(for .js and the other stuff in .editorconfig)
+        uses: creyD/prettier_action@v4.3
+        with:
+          dry: true #needed so it doens’t commit.
+          prettier_options: --write .
       - name: (Files that are incorrectly formatted) ∩ (Files that have been changed in this commit or pull request)
         run: git diff --exit-code -- ${{ steps.changed-files.outputs.all_changed_files }} | tee ./review-dog.diff
         if: steps.changed-files.outputs.all_changed_files != ''
@@ -49,10 +60,9 @@ jobs:
             ${{ runner.os }}-pip-
       - name: Setup Python Environment
         uses: actions/setup-python@v4
-        with: 
+        with:
           python-version: "${{ matrix.python }}"
       - name: Install requirements
         run: pip install -r requirements/ci.txt
       - name: run pflake8
         run: pflake8
-
