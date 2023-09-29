@@ -1,8 +1,9 @@
-from enum import Enum
 import json
 import logging
-import requests
+from enum import Enum
 from typing import Generator, List, Union
+
+import requests
 
 from mailcow_integration.api.exceptions import *
 from mailcow_integration.api.interface.alias import AliasType, MailcowAlias

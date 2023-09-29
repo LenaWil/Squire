@@ -1,15 +1,18 @@
-from django.contrib.auth.models import Permission
-from django.core.exceptions import PermissionDenied, ImproperlyConfigured
-from django.test import TestCase
 from unittest.mock import Mock
 
-from utils.testing.view_test_utils import TestMixinMixin
+from django.contrib.auth.models import Permission
+from django.core.exceptions import ImproperlyConfigured, PermissionDenied
+from django.test import TestCase
 
-from membership_file.tests.mixins import TestMixinWithMemberMiddleware
-
-from committees.mixins import AssociationGroupMixin, GroupSettingsMixin, AssociationGroupPermissionRequiredMixin
+from committees.mixins import (
+    AssociationGroupMixin,
+    AssociationGroupPermissionRequiredMixin,
+    GroupSettingsMixin,
+)
 from committees.models import AssociationGroup
 from committees.tests import get_fake_config
+from membership_file.tests.mixins import TestMixinWithMemberMiddleware
+from utils.testing.view_test_utils import TestMixinMixin
 
 
 class TestAssociationGroupMixin(TestMixinWithMemberMiddleware, TestMixinMixin, TestCase):

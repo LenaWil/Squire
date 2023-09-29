@@ -6,12 +6,10 @@ from django.utils.translation import gettext_lazy as _
 from django.views.generic import TemplateView, UpdateView
 from dynamic_preferences.registries import global_preferences_registry
 
+from membership_file.forms import MemberForm
+from membership_file.models import Member, Membership
 from membership_file.util import MembershipRequiredMixin
 from user_interaction.accountcollective import AccountViewMixin
-
-from membership_file.models import Member, Membership
-from membership_file.forms import MemberForm
-
 
 global_preferences = global_preferences_registry.manager()
 

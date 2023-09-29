@@ -1,9 +1,8 @@
-from django.test import TestCase, Client
 from django.conf import settings
+from django.contrib.auth import get_user_model
+from django.test import Client, TestCase
 
 from activity_calendar.models import Activity, ActivityMoment, ActivitySlot
-
-from django.contrib.auth import get_user_model
 
 User = get_user_model()
 

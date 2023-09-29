@@ -1,25 +1,23 @@
+from unittest.mock import patch
+
 from django.contrib import messages
 from django.test import TestCase
 from django.urls import reverse
-from django.views.generic import TemplateView, ListView, View
-
-from unittest.mock import patch
+from django.views.generic import ListView, TemplateView, View
 
 from committees.mixins import AssociationGroupMixin
 from committees.tests.committee_pages.utils import AssocationGroupTestingMixin
-from utils.testing.view_test_utils import ViewValidityMixin, TestMixinMixin
-
+from nextcloud_integration.committee_pages.views import *
 from nextcloud_integration.models import SquireNextCloudFolder
 from nextcloud_integration.tests import patch_construction
 from nextcloud_integration.views import (
-    NextcloudConnectionViewMixin,
-    FolderMixin,
     FolderCreateView,
     FolderEditView,
+    FolderMixin,
+    NextcloudConnectionViewMixin,
     SyncFileToFolderView,
 )
-
-from nextcloud_integration.committee_pages.views import *
+from utils.testing.view_test_utils import TestMixinMixin, ViewValidityMixin
 
 
 class CloudOverviewTestCase(AssocationGroupTestingMixin, ViewValidityMixin, TestCase):

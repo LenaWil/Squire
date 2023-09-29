@@ -3,8 +3,12 @@ from django.db import models
 from django.urls import reverse
 from django.utils.text import slugify
 
-from nextcloud_integration.nextcloud_resources import NextCloudFolder, NextCloudFile, get_file_type
 from nextcloud_integration.nextcloud_client import construct_client
+from nextcloud_integration.nextcloud_resources import (
+    NextCloudFile,
+    NextCloudFolder,
+    get_file_type,
+)
 
 
 class SquireNextCloudFolder(models.Model):

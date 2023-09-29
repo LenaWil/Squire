@@ -1,4 +1,8 @@
-from utils.viewcollectives import ViewCollectiveConfig, ViewCollectiveRegistry, ViewCollectiveViewMixin
+from utils.viewcollectives import (
+    ViewCollectiveConfig,
+    ViewCollectiveRegistry,
+    ViewCollectiveViewMixin,
+)
 
 
 class AdminStatusBaseConfig(ViewCollectiveConfig):

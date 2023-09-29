@@ -1,16 +1,14 @@
-from django.forms import Form, ValidationError, ModelForm
-from django.forms.formsets import BaseFormSet
+from django.forms import Form, ModelForm, ValidationError
 from django.forms.fields import CharField, ChoiceField, HiddenInput
+from django.forms.formsets import BaseFormSet
 from django.forms.renderers import get_default_renderer
 from django.utils.text import slugify
 
-from utils.forms import FormGroup
-
-from nextcloud_integration.nextcloud_client import construct_client, OperationFailed
+from nextcloud_integration.models import SquireNextCloudFile, SquireNextCloudFolder
+from nextcloud_integration.nextcloud_client import OperationFailed, construct_client
 from nextcloud_integration.nextcloud_resources import NextCloudFile, NextCloudFolder
-from nextcloud_integration.models import SquireNextCloudFolder, SquireNextCloudFile
 from nextcloud_integration.widgets import NextcloudFileSelectWidget
-
+from utils.forms import FormGroup
 
 __all__ = ["FileMoveForm", "FolderCreateForm", "SyncFileToFolderForm", "FolderEditFormGroup"]
 

@@ -1,13 +1,12 @@
 from django.test import TestCase
 from django.utils import timezone
 
+from activity_calendar.committee_pages.forms import *
+from activity_calendar.constants import ActivityStatus, ActivityType
+from activity_calendar.models import Activity, ActivityMoment
+from activity_calendar.widgets import BootstrapDateTimePickerInput
 from committees.models import AssociationGroup
 from utils.testing import FormValidityMixin
-
-from activity_calendar.committee_pages.forms import *
-from activity_calendar.constants import ActivityType, ActivityStatus
-from activity_calendar.models import ActivityMoment, Activity
-from activity_calendar.widgets import BootstrapDateTimePickerInput
 
 
 class AddMeetingFormTestCase(FormValidityMixin, TestCase):

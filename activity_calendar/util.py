@@ -1,6 +1,7 @@
-from django.utils.timezone import pytz, now, localtime, get_current_timezone
-import icalendar
 import datetime
+
+import icalendar
+from django.utils.timezone import get_current_timezone, localtime, now, pytz
 
 
 def dst_aware_to_dst_ignore(date, origin_date, reverse=False):

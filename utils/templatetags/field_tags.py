@@ -1,5 +1,6 @@
-from core.widgets import ImageUploadMartorWidget
 from django import template
+
+from core.widgets import ImageUploadMartorWidget
 
 register = template.Library()
 

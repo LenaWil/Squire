@@ -1,7 +1,8 @@
+from django import template
 from django.core.exceptions import ImproperlyConfigured
 from django.forms.boundfield import BoundField
+
 from core.widgets import ImageUploadMartorWidget
-from django import template
 
 register = template.Library()
 

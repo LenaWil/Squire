@@ -1,12 +1,10 @@
 from django import forms
-from django.contrib.auth import authenticate
-from django.contrib.auth.forms import (
-    AuthenticationForm,
-    UserCreationForm,
-    PasswordChangeForm as DjangoPasswordChangeForm,
-    PasswordResetForm as DjangoPasswordResetForm,
-    SetPasswordForm as DjangoPasswordResetConfirmForm,
-)
+from django.contrib.auth import authenticate, get_user_model
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.forms import PasswordChangeForm as DjangoPasswordChangeForm
+from django.contrib.auth.forms import PasswordResetForm as DjangoPasswordResetForm
+from django.contrib.auth.forms import SetPasswordForm as DjangoPasswordResetConfirmForm
+from django.contrib.auth.forms import UserCreationForm
 from django.contrib.contenttypes.models import ContentType
 from django.core.exceptions import ValidationError
 from django.forms import ModelForm
@@ -17,8 +15,6 @@ from martor.widgets import MartorWidget
 from core.models import MarkdownImage
 from core.widgets import ImageUploadMartorWidget
 from utils.forms import UpdatingUserFormMixin
-
-from django.contrib.auth import get_user_model
 
 User = get_user_model()
 

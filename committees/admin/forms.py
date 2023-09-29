@@ -3,7 +3,8 @@ from django.forms import Form
 from django.forms.fields import BooleanField
 from django.forms.widgets import Input
 
-from committees.committeecollective import registry, CommitteeBaseConfig
+from committees.committeecollective import CommitteeBaseConfig, registry
+
 from .models import AssociationGroupPanelControl
 
 

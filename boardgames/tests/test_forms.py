@@ -1,9 +1,8 @@
 from django.test import TestCase
 
-from utils.testing.form_test_util import FormValidityMixin
-
 from boardgames.forms import BoardgameFilterForm
 from boardgames.models import BoardGame
+from utils.testing.form_test_util import FormValidityMixin
 
 
 class BoardgameFilterFormTestCase(FormValidityMixin, TestCase):

@@ -1,9 +1,9 @@
-from django import template
 from urllib.parse import urlparse, urlunparse
 
+from django import template
 from django.conf import settings
-from django.http import QueryDict
 from django.contrib.auth.views import redirect_to_login
+from django.http import QueryDict
 
 register = template.Library()
 

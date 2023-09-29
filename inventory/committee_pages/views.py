@@ -3,13 +3,11 @@ from django.urls import reverse_lazy
 from django.utils.text import slugify
 from django.views.generic import ListView, UpdateView
 
+from committees.mixins import AssociationGroupMixin
 from inventory.forms import FilterOwnershipThroughRelatedItems
-from inventory.models import Ownership, Item
+from inventory.models import Item, Ownership
 from inventory.views import OwnershipMixin
 from utils.views import SearchFormMixin
-
-
-from committees.mixins import AssociationGroupMixin
 
 
 class AssociationGroupInventoryView(AssociationGroupMixin, SearchFormMixin, ListView):

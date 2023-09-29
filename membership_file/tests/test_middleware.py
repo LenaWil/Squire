@@ -1,5 +1,5 @@
-from django.contrib.auth.models import User, AnonymousUser
-from django.test import TestCase, RequestFactory
+from django.contrib.auth.models import AnonymousUser, User
+from django.test import RequestFactory, TestCase
 
 from membership_file.exceptions import UserIsNotCurrentMember
 from membership_file.middleware import MembershipMiddleware

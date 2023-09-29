@@ -1,14 +1,15 @@
 from copy import deepcopy
 from typing import List
+from unittest.mock import ANY, Mock, PropertyMock, patch
+
 from django.contrib.auth import get_user_model
 from django.contrib.auth.models import Group
 from django.test import TestCase, override_settings
 from dynamic_preferences.users.models import UserPreferenceModel
-from unittest.mock import Mock, PropertyMock, patch, ANY
+
 from committees.models import AssociationGroup, AssociationGroupMembership
 from core.tests.util import suppress_infos, suppress_warnings
 from mailcow_integration.api.exceptions import MailcowException
-
 from mailcow_integration.api.interface.alias import MailcowAlias
 from mailcow_integration.api.interface.mailbox import MailcowMailbox
 from mailcow_integration.api.interface.rspamd import RspamdSettings

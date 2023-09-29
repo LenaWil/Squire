@@ -4,15 +4,19 @@ from django import forms
 from django.forms import ModelForm, ValidationError
 from django.utils import timezone
 
-from core.forms import MarkdownForm
-from committees.models import AssociationGroup
-
-from activity_calendar.constants import ActivityType, SlotCreationType, ActivityStatus
-from activity_calendar.models import Activity, ActivityMoment
+from activity_calendar.committee_pages.utils import (
+    create_meeting_activity,
+    get_meeting_activity,
+)
+from activity_calendar.constants import ActivityStatus, ActivityType, SlotCreationType
 from activity_calendar.forms import ActivityMomentFormMixin
-from activity_calendar.committee_pages.utils import get_meeting_activity, create_meeting_activity
-from activity_calendar.widgets import BootstrapDateTimePickerInput
-
+from activity_calendar.models import Activity, ActivityMoment
+from activity_calendar.widgets import (
+    AutoDateTimePickerInput,
+    BootstrapDateTimePickerInput,
+)
+from committees.models import AssociationGroup
+from core.forms import MarkdownForm
 
 __all__ = [
     "CreateActivityMomentForm",
@@ -62,7 +66,7 @@ class AddMeetingForm(ModelForm):
             "local_location",
         ]
         widgets = {
-            "local_start_date": BootstrapDateTimePickerInput(),
+            "local_start_date": AutoDateTimePickerInput(),
         }
         labels = {
             "local_start_date": "Start date and time",

@@ -2,7 +2,11 @@ from datetime import datetime, timedelta
 from urllib.parse import quote, unquote
 
 from django.contrib import messages
-from django.contrib.auth.mixins import AccessMixin, LoginRequiredMixin, UserPassesTestMixin
+from django.contrib.auth.mixins import (
+    AccessMixin,
+    LoginRequiredMixin,
+    UserPassesTestMixin,
+)
 from django.core.exceptions import PermissionDenied
 from django.db.models import Q
 from django.http import Http404, HttpResponseRedirect
@@ -37,14 +41,10 @@ class ActivityOverview(ListView):
         start_date, end_date = self.get_time_range_data()
 
         activities = []
-        for activity in (
-            Activity.objects.filter(published_date__lte=timezone.now())
-            .filter(
-                Q(type=ActivityType.ACTIVITY_PUBLIC)
-                | (Q(type=ActivityType.ACTIVITY_MEETING) & Q(organisers__members=self.request.member))
-            )
-            .distinct()
-        ):
+        activity_filter = Q(type=ActivityType.ACTIVITY_PUBLIC)
+        if self.request.member:
+            activity_filter |= Q(type=ActivityType.ACTIVITY_MEETING) & Q(organisers__members=self.request.member)
+        for activity in Activity.objects.filter(published_date__lte=timezone.now()).filter(activity_filter).distinct():
             for activity_moment in activity.get_activitymoments_between(start_date, end_date):
                 activities.append(activity_moment)
 

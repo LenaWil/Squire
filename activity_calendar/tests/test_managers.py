@@ -1,10 +1,9 @@
 from django.test import TestCase
 
-from committees.models import AssociationGroup
-
 from activity_calendar.constants import ActivityType
-from activity_calendar.models import Activity, ActivityMoment
 from activity_calendar.managers import MeetingManager
+from activity_calendar.models import Activity, ActivityMoment
+from committees.models import AssociationGroup
 
 
 class TestActivityTags(TestCase):

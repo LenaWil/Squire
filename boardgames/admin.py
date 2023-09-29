@@ -1,6 +1,6 @@
 from django.contrib import admin
-from achievements.admin import AchievementItemInline
 
+from achievements.admin import AchievementItemInline
 from boardgames.models import BoardGame
 from inventory.admin import ItemAdmin
 

@@ -1,11 +1,10 @@
 from django.shortcuts import get_object_or_404
 from django.urls import reverse
 
-from committees.models import AssociationGroup
-
 from activity_calendar.constants import *
 from activity_calendar.feeds import CESTEventFeed, recurring_activities
 from activity_calendar.models import Activity, ActivityMoment, Calendar
+from committees.models import AssociationGroup
 
 from .utils import get_meeting_activity
 

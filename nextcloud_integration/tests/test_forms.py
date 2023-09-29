@@ -1,20 +1,19 @@
-from django.test import TestCase, override_settings
 from django.forms import ModelForm
-
-from utils.testing import FormValidityMixin
+from django.test import TestCase, override_settings
 
 from nextcloud_integration.forms import (
-    FileMoveForm,
-    FolderCreateForm,
-    SyncFileToFolderForm,
-    FolderEditForm,
     FileEditForm,
     FileEditFormset,
+    FileMoveForm,
+    FolderCreateForm,
+    FolderEditForm,
     FolderEditFormGroup,
+    SyncFileToFolderForm,
 )
-from nextcloud_integration.models import SquireNextCloudFolder, SquireNextCloudFile
-from . import *
+from nextcloud_integration.models import SquireNextCloudFile, SquireNextCloudFolder
+from utils.testing import FormValidityMixin
 
+from . import *
 
 # Note about the patch, make sure to select the nextcloud client constructor from forms as that is loaded before the
 # method is adjusted. As such the forms.construct_client remains the old method instead of the new one.

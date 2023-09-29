@@ -4,7 +4,7 @@ from django.test.testcases import TestCase
 from django.utils.safestring import SafeText
 from martor.fields import MartorFormField
 
-from core.fields import MarkdownObject, MarkdownCharField
+from core.fields import MarkdownCharField, MarkdownObject
 
 
 class MarkdownObjectTest(TestCase):

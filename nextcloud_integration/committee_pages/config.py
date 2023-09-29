@@ -1,7 +1,6 @@
-from django.urls import path, include, reverse
+from django.urls import include, path, reverse
 
 from committees.committeecollective import CommitteeBaseConfig
-
 from nextcloud_integration.committee_pages.views import *
 
 
