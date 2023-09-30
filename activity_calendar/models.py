@@ -7,19 +7,19 @@ from django.core.validators import MinValueValidator, ValidationError
 from django.db import models
 from django.db.models import Q
 from django.db.models.base import ModelBase
+from django.urls import reverse
 from django.utils import timezone
 from django.utils.formats import date_format
-from django.urls import reverse
 from recurrence.fields import RecurrenceField
 
 import activity_calendar.util as util
-from core.models import PresetImage
-from core.fields import MarkdownTextField
-from committees.utils import user_in_association_group
-from membership_file.models import Member
-from activity_calendar.constants import ActivityType, SlotCreationType, ActivityStatus
+from activity_calendar.constants import (ActivityStatus, ActivityType,
+                                         SlotCreationType)
 from activity_calendar.managers import MeetingManager
-
+from committees.utils import user_in_association_group
+from core.fields import MarkdownTextField
+from core.models import PresetImage
+from membership_file.models import Member
 
 User = get_user_model()
 

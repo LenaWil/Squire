@@ -1,8 +1,8 @@
-from django.test import TestCase
 from django.contrib.contenttypes.models import ContentType
+from django.test import TestCase
 
-from inventory.urls import CatalogueConverter
 from inventory.models import *
+from inventory.urls import CatalogueConverter
 
 
 class TestCatalogueConverter(TestCase):

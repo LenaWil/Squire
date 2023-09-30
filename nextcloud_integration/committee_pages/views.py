@@ -1,20 +1,15 @@
 from django.contrib import messages
 from django.http import HttpResponseRedirect
-from django.views.generic import TemplateView, ListView, View
 from django.urls import reverse
+from django.views.generic import ListView, TemplateView, View
 
 from committees.mixins import AssociationGroupMixin
-
 from nextcloud_integration.models import SquireNextCloudFolder
 from nextcloud_integration.utils import refresh_status
-from nextcloud_integration.views import (
-    FolderEditView,
-    FolderCreateView,
-    SyncFileToFolderView,
-    FolderMixin,
-    NextcloudConnectionViewMixin,
-)
-
+from nextcloud_integration.views import (FolderCreateView, FolderEditView,
+                                         FolderMixin,
+                                         NextcloudConnectionViewMixin,
+                                         SyncFileToFolderView)
 
 __all__ = [
     "CloudFoldersOverview",

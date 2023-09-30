@@ -1,13 +1,13 @@
 from django.contrib.auth.views import PasswordChangeView
 from django.test import TestCase
 from django.urls import reverse
-from django.views.generic import TemplateView, FormView, UpdateView
+from django.views.generic import FormView, TemplateView, UpdateView
 
 from core.forms import PasswordChangeForm
 from user_interaction.account_pages.forms import AccountForm
 from user_interaction.account_pages.views import *
-from utils.testing.view_test_utils import ViewValidityMixin
 from user_interaction.accountcollective import AccountViewMixin
+from utils.testing.view_test_utils import ViewValidityMixin
 
 
 class AccountViewPageTestCase(ViewValidityMixin, TestCase):

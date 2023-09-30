@@ -1,23 +1,24 @@
 from django.contrib import messages
 from django.contrib.auth.mixins import PermissionRequiredMixin
-from django.contrib.auth.models import Group, User, Permission
+from django.contrib.auth.models import Group, Permission, User
 from django.contrib.contenttypes.models import ContentType
 from django.db.models import QuerySet
-from django.test import TestCase, Client
+from django.test import Client, TestCase
 from django.urls import reverse
-from django.views.generic import DetailView, FormView, UpdateView, CreateView, ListView
+from django.views.generic import (CreateView, DetailView, FormView, ListView,
+                                  UpdateView)
 
 from core.tests.util import suppress_warnings
+from inventory.forms import *
+from inventory.models import MiscellaneousItem, Ownership
+from inventory.views import *
+from inventory.views import (CatalogueMixin, ItemMixin,
+                             OwnershipCatalogueLinkMixin, OwnershipMixin)
 from membership_file.models import Member
 from membership_file.tests.mixins import TestMixinWithMemberMiddleware
 from membership_file.util import MembershipRequiredMixin
-from utils.testing.view_test_utils import ViewValidityMixin, TestMixinMixin
-from utils.views import SearchFormMixin, RedirectMixin
-
-from inventory.forms import *
-from inventory.models import Ownership, MiscellaneousItem
-from inventory.views import *
-from inventory.views import OwnershipMixin, CatalogueMixin, ItemMixin, OwnershipCatalogueLinkMixin
+from utils.testing.view_test_utils import TestMixinMixin, ViewValidityMixin
+from utils.views import RedirectMixin, SearchFormMixin
 
 
 class TestOwnershipMixin(TestMixinWithMemberMiddleware, TestMixinMixin, TestCase):

@@ -1,12 +1,9 @@
 from django.test import TestCase
 
 from achievements.models import Achievement, Category
-from core.tests.util import (
-    check_http_response,
-    TestPublicUser,
-    TestAccountUser,
-    check_http_response_with_login_redirect,
-)
+from core.tests.util import (TestAccountUser, TestPublicUser,
+                             check_http_response,
+                             check_http_response_with_login_redirect)
 
 
 class TestCaseAchievementFrontEndViews(TestCase):

@@ -3,20 +3,18 @@ from django.contrib.auth.models import Group, Permission
 from django.contrib.contenttypes.models import ContentType
 from django.test import TestCase
 from django.urls import reverse
-from committees.tests.committee_pages.utils import AssocationGroupTestingMixin
-from django.views.generic import UpdateView, ListView
+from django.views.generic import ListView, UpdateView
 
-from committees.models import AssociationGroup
 from committees.mixins import AssociationGroupMixin
+from committees.models import AssociationGroup
+from committees.tests.committee_pages.utils import AssocationGroupTestingMixin
+from inventory.committee_pages.views import (
+    AssociationGroupInventoryView, AssociationGroupItemLinkUpdateView)
+from inventory.forms import *
+from inventory.models import MiscellaneousItem, Ownership
+from inventory.views import OwnershipMixin
 from utils.testing.view_test_utils import ViewValidityMixin
 from utils.views import SearchFormMixin
-
-from inventory.forms import *
-from inventory.models import MiscellaneousItem
-from inventory.views import OwnershipMixin
-
-from inventory.models import Ownership
-from inventory.committee_pages.views import AssociationGroupInventoryView, AssociationGroupItemLinkUpdateView
 
 
 class TestAssociationGroupInventoryView(AssocationGroupTestingMixin, ViewValidityMixin, TestCase):

@@ -1,9 +1,9 @@
 from django import forms
 from django.contrib.contenttypes.models import ContentType
 from django.core.exceptions import ImproperlyConfigured
+from django.template import Context, Template
 from django.test import TestCase
 from django.test.client import RequestFactory
-from django.template import Context, Template
 
 from core.models import MarkdownImage
 from core.widgets import ImageUploadMartorWidget

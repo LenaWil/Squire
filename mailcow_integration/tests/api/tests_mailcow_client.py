@@ -1,19 +1,22 @@
 import json
+from unittest.mock import Mock, call, patch
 
 from django.conf import settings
 from django.test import TestCase, override_settings
 from django.urls import reverse
 from django.utils import timezone
 from requests import Response
-from unittest.mock import patch, Mock, call
-from core.tests.util import suppress_errors, suppress_infos
 
+from core.tests.util import suppress_errors, suppress_infos
 from mailcow_integration.api.client import MailcowAPIClient, RequestType
 from mailcow_integration.api.exceptions import *
 from mailcow_integration.api.interface.alias import MailcowAlias
 from mailcow_integration.api.interface.rspamd import RspamdSettings
-from mailcow_integration.squire_mailcow import SquireMailcowManager, get_mailcow_manager
-from mailcow_integration.tests.api.test_interfaces import get_alias_json, get_mailbox_json, get_rspamd_json
+from mailcow_integration.squire_mailcow import (SquireMailcowManager,
+                                                get_mailcow_manager)
+from mailcow_integration.tests.api.test_interfaces import (get_alias_json,
+                                                           get_mailbox_json,
+                                                           get_rspamd_json)
 
 ##################################################################################
 # Test cases for the mailcow client

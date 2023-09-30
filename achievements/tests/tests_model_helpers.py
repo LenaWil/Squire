@@ -1,8 +1,8 @@
+from django.contrib.auth import get_user_model
 from django.test import TestCase
 
-from achievements.models import Achievement, Category, Claimant, get_achievement_image_upload_path
-
-from django.contrib.auth import get_user_model
+from achievements.models import (Achievement, Category, Claimant,
+                                 get_achievement_image_upload_path)
 
 User = get_user_model()
 

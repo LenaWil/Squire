@@ -1,8 +1,9 @@
-from django.test import TestCase
 from django.contrib.auth.models import Permission, User
+from django.test import TestCase
 
 from nextcloud_integration.models import SquireNextCloudFolder
-from nextcloud_integration.templatetags.nextcloud_tags import has_edit_access, has_sync_access
+from nextcloud_integration.templatetags.nextcloud_tags import (has_edit_access,
+                                                               has_sync_access)
 
 
 class TemplateTagsTestCase(TestCase):

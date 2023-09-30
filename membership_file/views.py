@@ -1,17 +1,17 @@
 from django.contrib import messages
 from django.core.exceptions import PermissionDenied
-from django.views.generic import TemplateView, FormView
 from django.template.response import TemplateResponse
 from django.urls import reverse_lazy
+from django.views.generic import FormView, TemplateView
 from dynamic_preferences.registries import global_preferences_registry
 
-from .util import MembershipRequiredMixin
+from membership_file.forms import ContinueMembershipForm
+from membership_file.models import Membership
 
 # Enable the auto-creation of logs
 from .auto_model_update import *
 from .export import *
-from membership_file.forms import ContinueMembershipForm
-from membership_file.models import Membership
+from .util import MembershipRequiredMixin
 
 global_preferences = global_preferences_registry.manager()
 

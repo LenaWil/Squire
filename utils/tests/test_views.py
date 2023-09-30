@@ -1,19 +1,20 @@
-from django.core.exceptions import ValidationError, PermissionDenied
 from django.contrib.auth import get_user_model
 from django.contrib.auth.models import Group
 from django.contrib.messages import constants
 from django.contrib.messages.storage.fallback import FallbackStorage
 from django.contrib.sessions.middleware import SessionMiddleware
+from django.core.exceptions import PermissionDenied, ValidationError
+from django.forms import BooleanField, Form
 from django.http import HttpResponse
-from django.test import TestCase, RequestFactory
+from django.test import RequestFactory, TestCase
 from django.views import View
-from django.views.generic import ListView, FormView
-from django.forms import Form, BooleanField
+from django.views.generic import FormView, ListView
 
 User = get_user_model()
 
 
-from utils.views import SearchFormMixin, RedirectMixin, PostOnlyFormViewMixin, SuperUserRequiredMixin
+from utils.views import (PostOnlyFormViewMixin, RedirectMixin, SearchFormMixin,
+                         SuperUserRequiredMixin)
 
 
 class TestForm(Form):

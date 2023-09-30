@@ -2,9 +2,8 @@ from django.contrib.auth.models import Group
 from django.core.exceptions import ImproperlyConfigured
 from django.urls import reverse
 
-from utils.testing.view_test_utils import ViewValidityMixin
-
 from committees.models import AssociationGroup
+from utils.testing.view_test_utils import ViewValidityMixin
 
 
 class AssocationGroupTestingMixin(ViewValidityMixin):

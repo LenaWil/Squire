@@ -2,16 +2,16 @@ from django.contrib import messages
 from django.test import TestCase
 from django.urls import reverse
 from django.views.generic import FormView, TemplateView
-
 from dynamic_preferences.registries import global_preferences_registry
 
 global_preferences = global_preferences_registry.manager()
 
-from core.tests.util import suppress_warnings, DynamicRegistryUsageMixin
-from utils.testing.view_test_utils import ViewValidityMixin
+from core.tests.util import DynamicRegistryUsageMixin, suppress_warnings
 from membership_file.forms import ContinueMembershipForm
 from membership_file.models import MemberYear
-from membership_file.views import ExtendMembershipView, ExtendMembershipSuccessView
+from membership_file.views import (ExtendMembershipSuccessView,
+                                   ExtendMembershipView)
+from utils.testing.view_test_utils import ViewValidityMixin
 
 
 class ExtendMembershipViewTest(ViewValidityMixin, DynamicRegistryUsageMixin, TestCase):

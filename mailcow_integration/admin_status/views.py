@@ -1,30 +1,30 @@
+import logging
 from dataclasses import dataclass, field
 from enum import Enum
-import logging
 from typing import Dict, List, Optional, Tuple, TypedDict
 
 from django.conf import settings
-from django.db.models import QuerySet
 from django.contrib import messages
+from django.db.models import QuerySet
 from django.http import HttpResponseBadRequest, HttpResponseRedirect
 from django.urls import reverse
 from django.utils.html import format_html
 from django.views.generic import TemplateView
+
 from committees.models import AssociationGroup
 from core.status_collective import AdminStatusViewMixin
-
 from mailcow_integration.api.exceptions import (
-    MailcowAPIAccessDenied,
-    MailcowAPIReadWriteAccessDenied,
-    MailcowAuthException,
-    MailcowException,
-)
+    MailcowAPIAccessDenied, MailcowAPIReadWriteAccessDenied,
+    MailcowAuthException, MailcowException)
 from mailcow_integration.api.interface.alias import MailcowAlias
 from mailcow_integration.api.interface.base import MailcowAPIResponse
 from mailcow_integration.api.interface.mailbox import MailcowMailbox
 from mailcow_integration.api.interface.rspamd import RspamdSettings
-from mailcow_integration.dynamic_preferences_registry import alias_address_to_id
-from mailcow_integration.squire_mailcow import AliasCategory, SquireMailcowManager, get_mailcow_manager
+from mailcow_integration.dynamic_preferences_registry import \
+    alias_address_to_id
+from mailcow_integration.squire_mailcow import (AliasCategory,
+                                                SquireMailcowManager,
+                                                get_mailcow_manager)
 
 logger = logging.getLogger(__name__)
 

@@ -1,13 +1,13 @@
-from django.contrib.auth.models import Permission, Group
+from unittest.mock import Mock, patch
+
+from django.contrib.auth.models import Group, Permission
 from django.core.exceptions import ImproperlyConfigured
 from django.forms import Form
 from django.test import TestCase
 
-from unittest.mock import patch, Mock
-
-from committees.views import BaseSettingsUpdateView
 from committees.models import AssociationGroup
 from committees.options import SettingsOptionBase, SimpleFormSettingsOption
+from committees.views import BaseSettingsUpdateView
 
 
 class SettingOptionsTestCase(TestCase):

@@ -1,22 +1,20 @@
 from datetime import datetime, timedelta
+from unittest.mock import patch
 
-from django.db import models
+from django.conf import settings
+from django.contrib.auth import get_user_model
 from django.contrib.auth.models import AnonymousUser
 from django.core.validators import ValidationError
-from django.conf import settings
+from django.db import models
 from django.test import TestCase
 from django.utils import timezone
-
-from unittest.mock import patch
 from recurrence import deserialize as deserialize_recurrence_test
 
+from activity_calendar.models import (Activity, ActivityMoment, ActivitySlot,
+                                      MemberCalendarSettings, Participant)
 from core.models import PresetImage
 
 from . import mock_now
-
-from activity_calendar.models import Activity, ActivitySlot, Participant, ActivityMoment, MemberCalendarSettings
-
-from django.contrib.auth import get_user_model
 
 User = get_user_model()
 

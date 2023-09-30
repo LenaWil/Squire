@@ -1,6 +1,5 @@
-from committees.options import SimpleFormSettingsOption
-
 from activity_calendar.committee_pages.forms import GroupMeetingSettingsForm
+from committees.options import SimpleFormSettingsOption
 
 
 class MessageOptions(SimpleFormSettingsOption):

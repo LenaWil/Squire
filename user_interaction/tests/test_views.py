@@ -1,16 +1,15 @@
 from django.contrib.auth.models import User
 from django.test import TestCase
 from django.urls import reverse
-
 from dynamic_preferences.registries import global_preferences_registry
 
 global_preferences = global_preferences_registry.manager()
 
 from core.forms import LoginForm
 from core.tests.util import DynamicRegistryUsageMixin
+from membership_file.models import MemberYear
 from user_interaction.views import HomeNonAuthenticatedView, HomeUsersView
 from utils.testing.view_test_utils import ViewValidityMixin
-from membership_file.models import MemberYear
 
 
 class TestHomePageView(ViewValidityMixin, DynamicRegistryUsageMixin, TestCase):

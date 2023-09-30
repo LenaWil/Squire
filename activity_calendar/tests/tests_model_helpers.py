@@ -1,8 +1,8 @@
+from django.contrib.auth import get_user_model
 from django.test import TestCase
 
-from activity_calendar.models import Activity, ActivityMoment, ActivitySlot, Participant
-
-from django.contrib.auth import get_user_model
+from activity_calendar.models import (Activity, ActivityMoment, ActivitySlot,
+                                      Participant)
 
 User = get_user_model()
 

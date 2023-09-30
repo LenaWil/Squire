@@ -1,19 +1,15 @@
+from unittest.mock import MagicMock
+
 from django import forms
-from django.contrib.admin import ModelAdmin, AdminSite
-from django.contrib.admin.models import LogEntry, ADDITION
+from django.contrib.admin import AdminSite, ModelAdmin
+from django.contrib.admin.models import ADDITION, LogEntry
 from django.contrib.auth import get_user_model
 from django.contrib.auth.models import Group
 from django.forms.models import model_to_dict
-from django.test import TestCase, RequestFactory
+from django.test import RequestFactory, TestCase
 
-from unittest.mock import MagicMock
-
-from utils.forms import (
-    RequestUserToFormModelAdminMixin,
-    UpdatingUserFormMixin,
-    get_basic_filter_by_field_form,
-    FormGroup,
-)
+from utils.forms import (FormGroup, RequestUserToFormModelAdminMixin,
+                         UpdatingUserFormMixin, get_basic_filter_by_field_form)
 from utils.testing import FormValidityMixin
 
 User = get_user_model()

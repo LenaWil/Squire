@@ -1,11 +1,12 @@
-from django.contrib.auth.models import User, Group
+from django.contrib.auth.models import Group, User
+from django.template import Context
 from django.test import TestCase
 from django.test.client import RequestFactory
-from django.template import Context
 
-from membership_file.models import Member
 from inventory.models import MiscellaneousItem, Ownership
-from inventory.templatetags.inventory_tags import render_ownership_tags, get_owned_by
+from inventory.templatetags.inventory_tags import (get_owned_by,
+                                                   render_ownership_tags)
+from membership_file.models import Member
 
 
 class RenderOwnershipTemplatetagTest(TestCase):

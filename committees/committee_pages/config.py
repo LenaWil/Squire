@@ -1,9 +1,8 @@
 from django.urls import path
 
-from committees.committeecollective import CommitteeBaseConfig
-from committees.committee_pages.views import *
-
 from committees.committee_pages.options import settings_options_registry
+from committees.committee_pages.views import *
+from committees.committeecollective import CommitteeBaseConfig
 
 
 class AssociationGroupHomeConfig(CommitteeBaseConfig):

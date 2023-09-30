@@ -1,20 +1,18 @@
 import datetime
-
-from django.contrib.auth.models import Permission
-from django.test import TestCase
-from django.utils import dateparse
-from django.forms import ModelForm
-
 from unittest.mock import patch
 
-from activity_calendar.constants import ActivityStatus, SlotCreationType
-from activity_calendar.models import *
-from activity_calendar.forms import *
-
-from utils.testing import FormValidityMixin
-from . import mock_now, mock_is_organiser
-
 from django.contrib.auth import get_user_model
+from django.contrib.auth.models import Permission
+from django.forms import ModelForm
+from django.test import TestCase
+from django.utils import dateparse
+
+from activity_calendar.constants import ActivityStatus, SlotCreationType
+from activity_calendar.forms import *
+from activity_calendar.models import *
+from utils.testing import FormValidityMixin
+
+from . import mock_is_organiser, mock_now
 
 User = get_user_model()
 

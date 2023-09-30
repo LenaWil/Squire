@@ -1,9 +1,9 @@
 from importlib import import_module
 from typing import List, Optional, Type
+
 from django.apps import apps
 from django.core.exceptions import PermissionDenied
-from django.urls import reverse, include, path
-
+from django.urls import include, path, reverse
 
 __all__ = ["ViewCollectiveConfig", "ViewCollectiveViewMixin", "ViewCollectiveRegistry"]
 

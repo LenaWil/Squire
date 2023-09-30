@@ -2,11 +2,10 @@ from django.contrib import admin
 from django.test import TestCase
 from django.urls import reverse
 
-from utils.testing.view_test_utils import ViewValidityMixin
-
 from committees.admin.forms import AssociationGroupsTabAccessForm
 from committees.admin.models import AssociationGroupPanelControl
 from committees.admin.options import GroupPanelAccessAdmin
+from utils.testing.view_test_utils import ViewValidityMixin
 
 
 class GroupPanelAccessAdminTestCase(ViewValidityMixin, TestCase):

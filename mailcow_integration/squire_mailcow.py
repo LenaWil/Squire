@@ -1,10 +1,11 @@
-from enum import Enum
+import logging
 import re
-from typing import Dict, Optional, List, Tuple
+from enum import Enum
+from typing import Dict, List, Optional, Tuple
 
 from django.apps import apps
 from django.conf import settings
-from django.db.models import QuerySet, Exists, OuterRef
+from django.db.models import Exists, OuterRef, QuerySet
 from django.template.loader import get_template
 
 from mailcow_integration.api.client import MailcowAPIClient
@@ -12,10 +13,8 @@ from mailcow_integration.api.exceptions import MailcowException
 from mailcow_integration.api.interface.alias import MailcowAlias
 from mailcow_integration.api.interface.mailbox import MailcowMailbox
 from mailcow_integration.api.interface.rspamd import RspamdSettings
-from mailcow_integration.dynamic_preferences_registry import alias_address_to_id
-
-import logging
-
+from mailcow_integration.dynamic_preferences_registry import \
+    alias_address_to_id
 
 logger = logging.getLogger(__name__)
 

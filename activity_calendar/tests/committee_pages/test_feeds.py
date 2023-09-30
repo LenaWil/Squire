@@ -1,12 +1,11 @@
 from django.test import TestCase
 from django.urls import reverse
 
-from committees.models import AssociationGroup
-
+from activity_calendar.committee_pages.feeds import MeetingCalendarFeed
 from activity_calendar.constants import ActivityStatus
 from activity_calendar.models import Activity, ActivityMoment
 from activity_calendar.tests.tests_icalendar import FeedTestMixin
-from activity_calendar.committee_pages.feeds import MeetingCalendarFeed
+from committees.models import AssociationGroup
 
 
 class MeetingCalendarFeedTestCase(FeedTestMixin, TestCase):

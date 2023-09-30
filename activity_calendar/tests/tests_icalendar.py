@@ -1,15 +1,16 @@
-import icalendar
-from datetime import timedelta, datetime, date
+from datetime import date, datetime, timedelta
 
+import icalendar
 from django.test import TestCase
 from django.test.client import RequestFactory
-from django.utils import timezone, dateparse
-
-from membership_file.models import Member
+from django.utils import dateparse, timezone
 
 from activity_calendar.constants import ActivityStatus
-from activity_calendar.models import Activity, ActivityMoment, CalendarActivityLink
-from activity_calendar.feeds import PublicCalendarFeed, get_feed_id, BirthdayCalendarFeed, CustomCalendarFeed
+from activity_calendar.feeds import (BirthdayCalendarFeed, CustomCalendarFeed,
+                                     PublicCalendarFeed, get_feed_id)
+from activity_calendar.models import (Activity, ActivityMoment,
+                                      CalendarActivityLink)
+from membership_file.models import Member
 
 
 class TestCaseICalendarExport(TestCase):

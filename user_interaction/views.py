@@ -1,19 +1,18 @@
-from datetime import timedelta
 import random
-from django.views.generic import TemplateView
+from datetime import timedelta
+
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.utils import timezone
-
+from django.views.generic import TemplateView
 from dynamic_preferences.registries import global_preferences_registry
 
-from activity_calendar.models import Activity
 from activity_calendar.constants import ActivityType
+from activity_calendar.models import Activity
 from core.forms import LoginForm
 from membership_file.models import Membership
 from membership_file.views import MembershipRequiredMixin
 from utils.spoofs import optimise_naming_scheme
-
 
 global_preferences = global_preferences_registry.manager()
 

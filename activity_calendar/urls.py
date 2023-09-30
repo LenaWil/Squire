@@ -1,12 +1,12 @@
 from django.conf import settings
-from django.urls import path, include, register_converter, reverse_lazy
+from django.urls import include, path, register_converter, reverse_lazy
 from django.views.generic.base import RedirectView
 
-from . import views, api
-from .feeds import PublicCalendarFeed, CustomCalendarFeed, BirthdayCalendarFeed
-
-from activity_calendar.url_converters import DateTimeIsoConverter
 from activity_calendar.committee_pages.feeds import MeetingCalendarFeed
+from activity_calendar.url_converters import DateTimeIsoConverter
+
+from . import api, views
+from .feeds import BirthdayCalendarFeed, CustomCalendarFeed, PublicCalendarFeed
 
 register_converter(DateTimeIsoConverter, "dt")
 

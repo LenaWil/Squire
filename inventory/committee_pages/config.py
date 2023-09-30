@@ -2,7 +2,8 @@ from django.urls import path, reverse
 
 from committees.committeecollective import CommitteeBaseConfig
 
-from .views import AssociationGroupInventoryView, AssociationGroupItemLinkUpdateView
+from .views import (AssociationGroupInventoryView,
+                    AssociationGroupItemLinkUpdateView)
 
 
 class InventoryConfig(CommitteeBaseConfig):

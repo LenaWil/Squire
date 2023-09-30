@@ -1,19 +1,20 @@
 from django.contrib.messages import SUCCESS
 from django.test import TestCase
 from django.urls import reverse
-from django.views.generic import TemplateView, FormView
+from django.views.generic import FormView, TemplateView
 
-from core.tests.util import suppress_warnings
-from membership_file.tests.mixins import TestMixinWithMemberMiddleware
-from utils.testing.view_test_utils import ViewValidityMixin, TestMixinMixin
-from utils.views import PostOnlyFormViewMixin
-
-from committees.forms import AssociationGroupMembershipForm, DeleteGroupExternalUrlForm, AddOrUpdateExternalUrlForm
-from committees.mixins import AssociationGroupMixin, GroupSettingsMixin
-from committees.models import AssociationGroup, GroupExternalUrl
 from committees.committee_pages.views import *
 from committees.committeecollective import CommitteeBaseConfig, registry
+from committees.forms import (AddOrUpdateExternalUrlForm,
+                              AssociationGroupMembershipForm,
+                              DeleteGroupExternalUrlForm)
+from committees.mixins import AssociationGroupMixin, GroupSettingsMixin
+from committees.models import AssociationGroup, GroupExternalUrl
 from committees.tests.committee_pages.utils import AssocationGroupTestingMixin
+from core.tests.util import suppress_warnings
+from membership_file.tests.mixins import TestMixinWithMemberMiddleware
+from utils.testing.view_test_utils import TestMixinMixin, ViewValidityMixin
+from utils.views import PostOnlyFormViewMixin
 
 
 class FakeConfig(CommitteeBaseConfig):

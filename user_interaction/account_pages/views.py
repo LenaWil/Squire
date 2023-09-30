@@ -1,17 +1,17 @@
 from django.contrib import messages
 from django.contrib.auth.views import PasswordChangeView
-from django.views.generic import TemplateView, FormView, UpdateView
 from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
+from django.views.generic import FormView, TemplateView, UpdateView
 from dynamic_preferences.users.forms import user_preference_form_builder
 
+from activity_calendar.models import MemberCalendarSettings
 from core.forms import PasswordChangeForm
-from .forms import AccountForm
-from user_interaction.accountcollective import AccountViewMixin
 from membership_file.models import Member
 from membership_file.util import MembershipRequiredMixin
-from activity_calendar.models import MemberCalendarSettings
+from user_interaction.accountcollective import AccountViewMixin
 
+from .forms import AccountForm
 
 __all__ = [
     "SiteAccountView",

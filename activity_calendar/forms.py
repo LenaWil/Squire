@@ -1,18 +1,19 @@
-from core.widgets import ImageUploadMartorWidget
 from django import forms
-from django.utils.formats import date_format
-from django.forms import ModelForm, Form
+from django.core.validators import ValidationError
+from django.forms import Form, ModelForm
 from django.forms.widgets import HiddenInput
 from django.utils.dateparse import parse_datetime
+from django.utils.formats import date_format
 from django.utils.timesince import timeuntil
 from django.utils.timezone import localtime
 from django.utils.translation import gettext_lazy as _
-from django.core.validators import ValidationError
 
-from .constants import SlotCreationType, ActivityStatus
-from .models import ActivitySlot, Activity, Participant, ActivityMoment
 from core.forms import MarkdownForm
 from core.models import PresetImage
+from core.widgets import ImageUploadMartorWidget
+
+from .constants import ActivityStatus, SlotCreationType
+from .models import Activity, ActivityMoment, ActivitySlot, Participant
 
 ##################################################################################
 # Defines forms related to the membership file.
