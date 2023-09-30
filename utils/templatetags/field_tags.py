@@ -1,4 +1,3 @@
-from core.widgets import ImageUploadMartorWidget
 from django import template
 
 register = template.Library()

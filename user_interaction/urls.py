@@ -1,4 +1,4 @@
-from django.urls import include, path
+from django.urls import path
 
 from user_interaction import views
 from user_interaction.accountcollective import registry

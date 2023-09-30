@@ -1,8 +1,8 @@
-from dynamic_preferences.types import ChoicePreference
 from dynamic_preferences.preferences import Section
+from dynamic_preferences.types import ChoicePreference
 from dynamic_preferences.users.registries import user_preferences_registry
 
-from .themes import THEMES, DEFAULT_THEME
+from .themes import DEFAULT_THEME, THEMES
 
 layout = Section("layout")
 

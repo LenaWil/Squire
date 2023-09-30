@@ -1,5 +1,5 @@
 from django.template.loader import get_template
-from martor.widgets import AdminMartorWidget, get_theme
+from martor.widgets import AdminMartorWidget
 
 
 class ImageUploadMartorWidget(AdminMartorWidget):

@@ -1,7 +1,5 @@
-import urllib
 
 from django import template
-from django.contrib.auth.models import User, Group
 
 register = template.Library()
 

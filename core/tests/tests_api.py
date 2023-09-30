@@ -1,5 +1,6 @@
 import json
 import os
+import shutil
 
 from django.conf import settings
 from django.contrib.auth import get_user_model
@@ -11,8 +12,6 @@ from django.urls import reverse
 
 from core.models import MarkdownImage
 from core.tests.util import suppress_warnings
-
-import shutil
 
 User = get_user_model()
 

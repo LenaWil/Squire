@@ -1,6 +1,6 @@
-from django.core.exceptions import PermissionDenied, ImproperlyConfigured
+from django.core.exceptions import ImproperlyConfigured, PermissionDenied
 
-from utils.viewcollectives import *
+from utils.viewcollectives import ViewCollectiveViewMixin
 
 
 class AssociationGroupMixin(ViewCollectiveViewMixin):

@@ -1,8 +1,6 @@
-from core.models import MarkdownImage
 from django.db import models
 from django.utils.html import strip_tags
 from django.utils.safestring import mark_safe
-
 from martor.fields import MartorFormField
 from martor.utils import markdownify
 

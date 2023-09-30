@@ -4,14 +4,10 @@ from django.urls import reverse_lazy
 from django.views.generic import ListView
 from django.views.generic.edit import FormView
 
-from membership_file.util import MembershipRequiredMixin
-
-from inventory.models import Ownership, Item
 from inventory.forms import *
+from inventory.models import Ownership
 from inventory.views import OwnershipMixin
-
 from user_interaction.accountcollective import AccountViewMixin
-
 
 __all__ = ["MemberItemsOverview", "MemberItemRemovalFormView", "MemberItemLoanFormView", "MemberOwnershipAlterView"]
 

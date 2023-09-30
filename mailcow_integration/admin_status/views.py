@@ -1,18 +1,18 @@
+import logging
 from dataclasses import dataclass, field
 from enum import Enum
-import logging
 from typing import Dict, List, Optional, Tuple, TypedDict
 
 from django.conf import settings
-from django.db.models import QuerySet
 from django.contrib import messages
+from django.db.models import QuerySet
 from django.http import HttpResponseBadRequest, HttpResponseRedirect
 from django.urls import reverse
 from django.utils.html import format_html
 from django.views.generic import TemplateView
+
 from committees.models import AssociationGroup
 from core.status_collective import AdminStatusViewMixin
-
 from mailcow_integration.api.exceptions import (
     MailcowAPIAccessDenied,
     MailcowAPIReadWriteAccessDenied,
@@ -22,9 +22,12 @@ from mailcow_integration.api.exceptions import (
 from mailcow_integration.api.interface.alias import MailcowAlias
 from mailcow_integration.api.interface.base import MailcowAPIResponse
 from mailcow_integration.api.interface.mailbox import MailcowMailbox
-from mailcow_integration.api.interface.rspamd import RspamdSettings
 from mailcow_integration.dynamic_preferences_registry import alias_address_to_id
-from mailcow_integration.squire_mailcow import AliasCategory, SquireMailcowManager, get_mailcow_manager
+from mailcow_integration.squire_mailcow import (
+    AliasCategory,
+    SquireMailcowManager,
+    get_mailcow_manager,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -370,9 +373,9 @@ class MailcowStatusView(TemplateView):
             mailboxes = list(self.mailcow_manager.get_mailbox_all(use_cache=False))
             # Force cache update; we don't care about the result
             self.mailcow_manager.get_internal_alias_rspamd_settings(use_cache=False)
-        except MailcowAuthException as e:
+        except MailcowAuthException:
             context["error"] = "No valid API key set."
-        except MailcowAPIReadWriteAccessDenied as e:
+        except MailcowAPIReadWriteAccessDenied:
             context["error"] = "API key only allows access to read operations, not write."
         except MailcowAPIAccessDenied as e:
             ip = str(e).rpartition(" ")[2]
@@ -428,7 +431,7 @@ class MailcowStatusView(TemplateView):
             # Update Rspamd rule for internal aliases
             try:
                 self.mailcow_manager.update_internal_addresses()
-            except MailcowException as e:
+            except MailcowException:
                 pass
         else:
             return HttpResponseBadRequest("Invalid alias_type passed")

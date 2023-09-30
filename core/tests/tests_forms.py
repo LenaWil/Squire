@@ -1,15 +1,10 @@
-from django.contrib.admin.models import LogEntry, ADDITION
+from django.contrib.admin.models import ADDITION, LogEntry
 from django.contrib.auth import get_user_model
 from django.contrib.contenttypes.models import ContentType
-from django.core.exceptions import ValidationError
-from django.forms import CharField
 from django.forms.models import model_to_dict
 from django.test.testcases import TestCase
-from django.utils.safestring import SafeText
-from martor.fields import MartorFormField
 from martor.widgets import MartorWidget
 
-from core.fields import MarkdownObject, MarkdownCharField, MarkdownTextField
 from core.forms import MarkdownForm
 from core.models import MarkdownImage
 from core.widgets import ImageUploadMartorWidget

@@ -1,10 +1,22 @@
-from django.urls import path, include, register_converter
 from django.contrib.contenttypes.models import ContentType
+from django.urls import include, path, register_converter
 from django.utils.text import slugify
 
-from inventory.views import *
-from inventory.forms import OwnershipRemovalForm, OwnershipActivationForm
+from inventory.forms import OwnershipActivationForm, OwnershipRemovalForm
 from inventory.models import Item
+from inventory.views import (
+    AddLinkCommitteeView,
+    AddLinkMemberView,
+    CatalogueInstructionsView,
+    CreateItemView,
+    DeleteItemView,
+    ItemLinkMaintenanceView,
+    LinkActivationStateView,
+    LinkDeletionView,
+    TypeCatalogue,
+    UpdateCatalogueLinkView,
+    UpdateItemView,
+)
 
 
 class CatalogueConverter:

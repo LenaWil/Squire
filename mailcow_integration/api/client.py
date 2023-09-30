@@ -1,10 +1,18 @@
-from enum import Enum
 import json
 import logging
-import requests
+from enum import Enum
 from typing import Generator, List, Union
 
-from mailcow_integration.api.exceptions import *
+import requests
+
+from mailcow_integration.api.exceptions import (
+    MailcowAPIAccessDenied,
+    MailcowAPIReadWriteAccessDenied,
+    MailcowAuthException,
+    MailcowException,
+    MailcowIDNotFoundException,
+    MailcowRouteNotFoundException,
+)
 from mailcow_integration.api.interface.alias import AliasType, MailcowAlias
 from mailcow_integration.api.interface.mailbox import MailcowMailbox
 from mailcow_integration.api.interface.rspamd import RspamdSettings

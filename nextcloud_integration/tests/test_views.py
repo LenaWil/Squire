@@ -1,30 +1,33 @@
-from django.contrib.auth.models import User, Permission
+from unittest.mock import Mock, patch
+
 from django.contrib.auth.mixins import PermissionRequiredMixin
+from django.contrib.auth.models import Permission, User
 from django.test import TestCase
 from django.urls import reverse
-from django.views.generic import ListView, FormView
+from django.views.generic import FormView, ListView
 from easywebdav.client import OperationFailed
 from requests.exceptions import ConnectionError
 from requests.models import Response
-from unittest.mock import Mock, patch
 
 from core.tests.util import suppress_warnings
-from utils.testing.view_test_utils import ViewValidityMixin, TestMixinMixin
 from membership_file.util import user_is_current_member
-
-from nextcloud_integration.forms import *
-from nextcloud_integration.models import SquireNextCloudFolder, SquireNextCloudFile
-from nextcloud_integration.nextcloud_resources import NextCloudFolder, NextCloudFile
+from nextcloud_integration.forms import (
+    FolderCreateForm,
+    FolderEditFormGroup,
+    SyncFileToFolderForm,
+)
+from nextcloud_integration.models import SquireNextCloudFile, SquireNextCloudFolder
+from nextcloud_integration.nextcloud_resources import NextCloudFile, NextCloudFolder
 from nextcloud_integration.views import (
-    NextcloudConnectionViewMixin,
-    FolderMixin,
+    DownloadFileview,
     FileBrowserView,
-    SiteDownloadView,
     FolderCreateView,
     FolderEditView,
+    FolderMixin,
+    NextcloudConnectionViewMixin,
     SyncFileToFolderView,
-    DownloadFileview,
 )
+from utils.testing.view_test_utils import TestMixinMixin, ViewValidityMixin
 
 from . import patch_construction
 

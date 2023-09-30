@@ -1,7 +1,7 @@
 from django.test import TestCase
 
+from committees.models import AssociationGroup, AssociationGroupMembership
 from committees.url_converters import AssociationgroupConverter
-from committees.models import *
 
 
 class TestAssociationgroupConverter(TestCase):

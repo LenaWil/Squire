@@ -1,20 +1,23 @@
 from django.contrib import admin
-from django.utils.timezone import localtime
+
+from core.admin import (
+    DisableModificationsAdminMixin,
+    MarkdownImageInline,
+    URLLinkInlineAdminMixin,
+)
+from utils.forms import RequestUserToFormModelAdminMixin
 
 from .forms import ActivityAdminForm, ActivityMomentAdminForm
 from .models import (
     Activity,
-    ActivitySlot,
-    Participant,
     ActivityMoment,
-    OrganiserLink,
-    CoreActivityGrouping,
+    ActivitySlot,
     Calendar,
     CalendarActivityLink,
+    CoreActivityGrouping,
+    OrganiserLink,
+    Participant,
 )
-
-from core.admin import DisableModificationsAdminMixin, MarkdownImageInline, URLLinkInlineAdminMixin
-from utils.forms import RequestUserToFormModelAdminMixin
 
 
 class MarkdownImageInlineAdmin(RequestUserToFormModelAdminMixin, admin.ModelAdmin):

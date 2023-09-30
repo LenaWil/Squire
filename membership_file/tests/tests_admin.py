@@ -2,14 +2,19 @@ from django.contrib import messages
 from django.contrib.admin import ModelAdmin
 from django.contrib.admin.sites import AdminSite
 from django.contrib.auth.models import User
-from django.test import Client, TestCase, override_settings
+from django.test import Client, TestCase
 from django.test.client import RequestFactory
 
 from core.tests.util import suppress_warnings
 from membership_file.admin import MemberWithLog
+from membership_file.models import (
+    Member,
+    MemberLog,
+    MemberLogField,
+    Membership,
+    MemberYear,
+)
 from membership_file.tests.util import fillDictKeys
-from membership_file.models import Member, MemberLog, MemberLogField, MemberYear, Membership
-
 
 ##################################################################################
 # Test cases for MemberLog-logic and Member deletion logic on the admin-side

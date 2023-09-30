@@ -1,10 +1,9 @@
 from django import forms
 from django.core.paginator import Paginator
+from django.template import Context, Template
 from django.template.context import Context
 from django.test import TestCase
 from django.test.client import RequestFactory
-from django.template import Context, Template
-
 
 from utils.templatetags import paginator as paginator_tags
 

@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.contrib.contenttypes.admin import GenericTabularInline
-from .models import *
+
+from .models import Achievement, AchievementItemLink, Category, Claimant
 
 
 class CategoryAdmin(admin.ModelAdmin):

@@ -1,6 +1,6 @@
-from django.core.exceptions import PermissionDenied
-from django.contrib.auth.models import Group, User, Permission
+from django.contrib.auth.models import Permission, User
 from django.contrib.messages import constants as msg_constants
+from django.core.exceptions import PermissionDenied
 from django.http import Http404, HttpResponse
 from django.template.response import TemplateResponse
 from django.test import Client, RequestFactory

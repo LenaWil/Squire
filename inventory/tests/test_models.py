@@ -4,16 +4,15 @@ from django.core.exceptions import ValidationError
 from django.test import TestCase
 from django.utils.text import slugify
 
-
-from membership_file.models import Member
 from inventory.models import (
     Item,
-    Ownership,
-    valid_item_class_ids,
     ItemManager,
-    get_item_image_upload_path,
     MiscellaneousItem,
+    Ownership,
+    get_item_image_upload_path,
+    valid_item_class_ids,
 )
+from membership_file.models import Member
 
 
 class TestOwnership(TestCase):

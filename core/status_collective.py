@@ -1,4 +1,8 @@
-from utils.viewcollectives import ViewCollectiveConfig, ViewCollectiveRegistry, ViewCollectiveViewMixin
+from utils.viewcollectives import (
+    ViewCollectiveConfig,
+    ViewCollectiveRegistry,
+    ViewCollectiveViewMixin,
+)
 
 
 class AdminStatusBaseConfig(ViewCollectiveConfig):
@@ -22,7 +26,6 @@ class AdminStatusViewMixin(ViewCollectiveViewMixin):
     Mixin for Admin Status Config classes
     """
 
-    pass
 
 
 registry = ViewCollectiveRegistry("status", "admin_status", root_namespace="core", config_class=AdminStatusBaseConfig)

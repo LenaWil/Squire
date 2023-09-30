@@ -3,7 +3,8 @@ from django.contrib.admin.filters import RelatedOnlyFieldListFilter
 
 from activity_calendar.admin import MarkdownImageInlineAdmin
 from committees.forms import AssociationGroupAdminForm
-from committees.models import *
+from committees.models import AssociationGroupMembership
+
 from .forms import AssociationGroupsTabAccessForm
 
 

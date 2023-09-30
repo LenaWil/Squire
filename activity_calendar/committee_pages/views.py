@@ -3,25 +3,27 @@ from datetime import timedelta
 from django.contrib import messages
 from django.core.exceptions import PermissionDenied
 from django.http import Http404, HttpResponseRedirect
-from django.urls import reverse
-from django.views.generic import ListView, FormView
 from django.shortcuts import get_object_or_404
+from django.urls import reverse
 from django.utils import timezone
-
-from committees.mixins import AssociationGroupMixin, AssociationGroupPermissionRequiredMixin
+from django.views.generic import FormView, ListView
 
 from activity_calendar.committee_pages.forms import (
-    CreateActivityMomentForm,
     AddMeetingForm,
+    CancelMeetingForm,
+    CreateActivityMomentForm,
+    EditCancelledMeetingForm,
     EditMeetingForm,
     MeetingRecurrenceForm,
-    CancelMeetingForm,
-    EditCancelledMeetingForm,
 )
 from activity_calendar.committee_pages.utils import get_meeting_activity
 from activity_calendar.constants import ActivityType
-from activity_calendar.models import Activity, ActivityMoment
+from activity_calendar.models import Activity
 from activity_calendar.templatetags.activity_tags import get_next_activity_instances
+from committees.mixins import (
+    AssociationGroupMixin,
+    AssociationGroupPermissionRequiredMixin,
+)
 
 __all__ = [
     "ActivityCalendarView",

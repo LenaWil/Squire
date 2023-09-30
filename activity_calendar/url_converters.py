@@ -1,9 +1,5 @@
-import datetime
 
 from urllib.parse import quote, unquote
-
-from django.utils import timezone
-
 
 from django.utils import dateparse
 

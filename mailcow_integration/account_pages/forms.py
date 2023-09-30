@@ -1,9 +1,6 @@
-from typing import Any, Mapping, Optional, Type, Union
-from django.apps import apps
-from django.forms.utils import ErrorList
 from dynamic_preferences.users.forms import UserPreferenceForm
 
-from mailcow_integration.squire_mailcow import SquireMailcowManager, get_mailcow_manager
+from mailcow_integration.squire_mailcow import SquireMailcowManager
 
 
 class MemberMailPreferencesForm(UserPreferenceForm):

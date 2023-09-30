@@ -1,11 +1,11 @@
-from django.test import TestCase
-from unittest.mock import patch, Mock
+from unittest.mock import Mock, patch
 
-from committees.committee_pages.config import AssociationGroupHomeConfig
-from utils.testing.form_test_util import FormValidityMixin
+from django.test import TestCase
 
 from committees.admin.forms import AssociationGroupsTabAccessForm, ConfigTabSelectWidget
 from committees.admin.models import AssociationGroupPanelControl
+from committees.committee_pages.config import AssociationGroupHomeConfig
+from utils.testing.form_test_util import FormValidityMixin
 
 
 class AssociationGroupsTabAccessFormTestCase(FormValidityMixin, TestCase):

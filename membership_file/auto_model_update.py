@@ -1,9 +1,8 @@
-from django.contrib.auth import get_user_model
-from django.db.models.signals import pre_save, post_save, post_delete
+from django.db.models.signals import post_delete, post_save, pre_save
 from django.dispatch import receiver
 
-from .serializers import MemberSerializer
 from .models import Member, MemberLog, MemberLogField
+from .serializers import MemberSerializer
 
 ##################################################################################
 # Methods that automatically create Log data when a Member gets updated

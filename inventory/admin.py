@@ -4,7 +4,7 @@ from import_export.admin import ExportActionMixin
 from import_export.fields import Field
 from import_export.resources import ModelResource
 
-from inventory.models import *
+from inventory.models import MiscellaneousItem, Ownership
 
 
 class OwnershipInline(GenericTabularInline):

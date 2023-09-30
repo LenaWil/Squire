@@ -1,8 +1,6 @@
-from unittest.mock import Mock
-from nextcloud_integration.nextcloud_resources import NextCloudFolder, NextCloudFile
 from unittest.mock import patch
 
-from requests.models import Response
+from nextcloud_integration.nextcloud_resources import NextCloudFile, NextCloudFolder
 
 
 def mock_exists(exists=True):

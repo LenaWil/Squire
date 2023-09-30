@@ -1,6 +1,11 @@
-from django.urls import path, include
+from django.urls import include, path
 
-from roleplaying.views import *
+from roleplaying.views import (
+    DownloadDigitalItemView,
+    RoleplaySystemView,
+    SystemDetailView,
+    SystemUpdateView,
+)
 
 namespace = "roleplaying"
 

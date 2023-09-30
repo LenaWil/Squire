@@ -1,13 +1,15 @@
 from django.conf import settings
-from django.contrib.auth.models import User, AnonymousUser
-from django.test import TestCase, RequestFactory
-from django.urls import reverse
+from django.contrib.auth.models import AnonymousUser, User
 from django.http.response import HttpResponseRedirect
-
-from utils.testing.view_test_utils import TestMixinMixin
+from django.test import TestCase
 
 from membership_file.exceptions import UserIsNotCurrentMember
-from membership_file.util import user_is_current_member, MembershipRequiredMixin, get_member_from_user
+from membership_file.util import (
+    MembershipRequiredMixin,
+    get_member_from_user,
+    user_is_current_member,
+)
+from utils.testing.view_test_utils import TestMixinMixin
 
 
 class TestUserIsCurrentMember(TestCase):

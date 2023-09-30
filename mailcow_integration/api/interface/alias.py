@@ -1,8 +1,7 @@
-from enum import Enum
-from typing import Optional, List
-
-from datetime import datetime
 from dataclasses import dataclass
+from datetime import datetime
+from enum import Enum
+from typing import List, Optional
 
 from mailcow_integration.api.interface.base import MailcowAPIResponse
 

@@ -4,17 +4,15 @@ from django.core.exceptions import PermissionDenied
 from django.http import Http404
 from django.http.response import HttpResponseRedirect
 from django.shortcuts import get_object_or_404
-from django.urls import reverse_lazy, reverse
-from django.views.generic import ListView, DetailView, TemplateView
-from django.views.generic.edit import FormView, UpdateView, CreateView
+from django.urls import reverse, reverse_lazy
+from django.views.generic import DetailView, ListView, TemplateView
+from django.views.generic.edit import CreateView, FormView, UpdateView
 
 from committees.utils import user_in_association_group
-from membership_file.util import MembershipRequiredMixin
-from utils.views import SearchFormMixin, RedirectMixin
-
-from inventory.models import Ownership, Item
 from inventory.forms import *
-
+from inventory.models import Item, Ownership
+from membership_file.util import MembershipRequiredMixin
+from utils.views import RedirectMixin, SearchFormMixin
 
 __all__ = [
     "TypeCatalogue",

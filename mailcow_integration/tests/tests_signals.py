@@ -1,15 +1,20 @@
 from unittest.mock import Mock, patch
+
 from django.contrib.auth.models import Group
 from django.db.models.signals import pre_save
 from django.test import TestCase
 from dynamic_preferences.registries import global_preferences_registry
+
 from committees.models import AssociationGroup, AssociationGroupMembership
 from core.tests.util import suppress_infos
 from mailcow_integration.api.exceptions import MailcowException
-
-from mailcow_integration.signals import deregister_signals, global_preference_required_for_signal, register_signals
+from mailcow_integration.signals import (
+    deregister_signals,
+    global_preference_required_for_signal,
+    register_signals,
+)
 from mailcow_integration.squire_mailcow import SquireMailcowManager
-from membership_file.models import Member, MemberYear, Membership
+from membership_file.models import Member, Membership, MemberYear
 
 
 class MailcowSignalTestMixin:

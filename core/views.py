@@ -4,22 +4,20 @@ from django.conf import settings
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.contrib.contenttypes.models import ContentType
 from django.core.exceptions import ObjectDoesNotExist
-from django.http import JsonResponse, HttpRequest
+from django.http import HttpRequest, JsonResponse
 from django.http.response import Http404
-from django.shortcuts import redirect, render
+from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse
 from django.utils.translation import ugettext_lazy as _
-from django.shortcuts import get_object_or_404
 from django.views import View
-from django.views.generic import TemplateView
 from django.views.decorators.http import require_safe
+from django.views.generic import TemplateView
+from dynamic_preferences.registries import global_preferences_registry
 
 from membership_file.util import MembershipRequiredMixin
 
 from .forms import RegisterForm
 from .models import MarkdownImage, Shortcut
-
-from dynamic_preferences.registries import global_preferences_registry
 
 global_preferences = global_preferences_registry.manager()
 
@@ -162,7 +160,7 @@ class MartorImageUploadAPIView(LoginRequiredMixin, PermissionRequiredMixin, View
             image = Image.open(uploaded_file)
             # verify() must be called immediately after the constructor.
             image.verify()
-        except Exception as exc:
+        except Exception:
             return self._json_bad_request(_("Bad image format."))
         #
         ## ENDCOPY

@@ -1,8 +1,14 @@
-from django.urls import path, include, reverse
+from django.urls import include, path
 
 from committees.committeecollective import CommitteeBaseConfig
-
-from nextcloud_integration.committee_pages.views import *
+from nextcloud_integration.committee_pages.views import (
+    CloudFileSyncInstructionsView,
+    CloudFileSyncView,
+    CloudFolderCreateView,
+    CloudFolderEditView,
+    CloudFolderRefreshView,
+    CloudFoldersOverview,
+)
 
 
 class NextcloudGroupConfig(CommitteeBaseConfig):

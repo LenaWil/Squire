@@ -1,13 +1,18 @@
-from django.test import TestCase
 from django.conf import settings
+from django.contrib.auth import get_user_model
+from django.test import TestCase
 from django.urls.base import reverse
 from dynamic_preferences.registries import global_preferences_registry
 
 from core.forms import LoginForm, RegisterForm
-from core.tests.util import check_http_response, TestSquireUser, TestPublicUser, TestAccountUser, suppress_warnings
+from core.tests.util import (
+    TestAccountUser,
+    TestPublicUser,
+    TestSquireUser,
+    check_http_response,
+    suppress_warnings,
+)
 from membership_file.tests.util import TestMemberUser
-
-from django.contrib.auth import get_user_model
 
 User = get_user_model()
 

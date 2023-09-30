@@ -1,5 +1,6 @@
 from django.apps import AppConfig
 from django.contrib.auth import get_user_model
+
 from utils.spoofs import optimise_naming_scheme
 
 
@@ -7,8 +8,9 @@ class UserInteractionConfig(AppConfig):
     name = "user_interaction"
 
     def ready(self):
-        from membership_file.util import get_member_from_user
         from dynamic_preferences.registries import global_preferences_registry
+
+        from membership_file.util import get_member_from_user
 
         def _get_user_display_name(user):
             """

@@ -1,12 +1,12 @@
-from django.conf import settings
-from django.core.validators import RegexValidator, MinValueValidator
-from django.db import models
 from datetime import date
 
+from django.conf import settings
+from django.contrib.auth import get_user_model
+from django.core.validators import MinValueValidator, RegexValidator
+from django.db import models
 from dynamic_preferences.registries import global_preferences_registry
 
 from utils.spoofs import optimise_naming_scheme
-from django.contrib.auth import get_user_model
 
 User = get_user_model()
 

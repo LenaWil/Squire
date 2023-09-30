@@ -1,14 +1,18 @@
 from django.test import TestCase
 
+from committees.forms import (
+    AddOrUpdateExternalUrlForm,
+    AssociationGroupMembershipForm,
+    AssociationGroupUpdateForm,
+    DeleteGroupExternalUrlForm,
+)
+from committees.models import (
+    AssociationGroup,
+    AssociationGroupMembership,
+    GroupExternalUrl,
+)
 from core.forms import MarkdownForm
 from utils.testing import FormValidityMixin
-from committees.models import AssociationGroup, AssociationGroupMembership, GroupExternalUrl
-from committees.forms import (
-    AssociationGroupUpdateForm,
-    AddOrUpdateExternalUrlForm,
-    DeleteGroupExternalUrlForm,
-    AssociationGroupMembershipForm,
-)
 
 
 class TestDeleteGroupExternalUrlForm(FormValidityMixin, TestCase):

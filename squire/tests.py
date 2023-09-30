@@ -1,8 +1,9 @@
-from django.test import TestCase
-from django.conf import settings
-from . import util
-
 import os
+
+from django.conf import settings
+from django.test import TestCase
+
+from . import util
 
 ##################################################################################
 # Test cases for util.py
@@ -47,5 +48,5 @@ class GetSecretKeyTest(TestCase):
 
         try:  # If it does, try deleting it
             os.remove(self.testcase_nonexisting_key_path)
-        except OSError as e:
+        except OSError:
             pass

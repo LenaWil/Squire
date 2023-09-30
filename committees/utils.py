@@ -1,6 +1,6 @@
-from django.contrib.auth.models import AnonymousUser, Permission
-from membership_file.util import get_member_from_user
+from django.contrib.auth.models import AnonymousUser
 
+from membership_file.util import get_member_from_user
 
 __all__ = ["user_in_association_group"]
 

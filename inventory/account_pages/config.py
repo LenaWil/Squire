@@ -1,8 +1,13 @@
-from django.urls import path, include
+from django.urls import include, path
 
 from user_interaction.accountcollective import AccountBaseConfig
 
-from .views import *
+from .views import (
+    MemberItemLoanFormView,
+    MemberItemRemovalFormView,
+    MemberItemsOverview,
+    MemberOwnershipAlterView,
+)
 
 
 class AccountInventoryConfig(AccountBaseConfig):

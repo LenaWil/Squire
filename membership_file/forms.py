@@ -1,10 +1,10 @@
 from django import forms
 from django.contrib.admin.widgets import FilteredSelectMultiple
 from django.core.exceptions import ImproperlyConfigured, ValidationError
-from django.utils.translation import gettext_lazy as _
 
-from .models import Member, Room, MemberYear, Membership
 from utils.forms import UpdatingUserFormMixin
+
+from .models import Member, Membership, Room
 
 ##################################################################################
 # Defines forms related to the membership file.

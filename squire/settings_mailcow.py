@@ -1,5 +1,5 @@
 # Copy all settings from the base file
-from .settings import *
+from .settings import BASE_DIR, json, os
 
 ####################################################################
 # Connection configurations to external services
