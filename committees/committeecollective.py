@@ -1,11 +1,12 @@
 from django.contrib.auth.models import Permission
 from django.db.models import Q
 
-from committees.models import AssociationGroup
-from committees.options import settings_options_registry
-from committees.utils import user_in_association_group
-from utils.auth_utils import get_perm_from_name
 from utils.viewcollectives import *
+from utils.auth_utils import get_perm_from_name
+
+from committees.models import AssociationGroup
+from committees.utils import user_in_association_group
+from committees.options import settings_options_registry
 
 
 class CommitteeBaseConfig(ViewCollectiveConfig):

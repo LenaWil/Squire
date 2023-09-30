@@ -1,15 +1,15 @@
-from unittest.mock import Mock, patch
-
-from django.contrib.auth.models import Permission, User
-from django.test import Client, TestCase
+from django.contrib.auth.models import User, Permission
+from django.test import TestCase, Client
 from django.urls import reverse
 from django.views.generic import FormView
+from unittest.mock import patch, Mock
+
+from membership_file.tests.mixins import TestMixinWithMemberMiddleware
+from utils.testing.view_test_utils import TestMixinMixin
 
 from committees.mixins import GroupSettingsMixin
 from committees.models import AssociationGroup
 from committees.views import BaseSettingsUpdateView
-from membership_file.tests.mixins import TestMixinWithMemberMiddleware
-from utils.testing.view_test_utils import TestMixinMixin
 
 from . import get_fake_config, get_fake_option
 

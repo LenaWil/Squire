@@ -1,18 +1,20 @@
-from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.test import TestCase
+from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.urls import reverse
 from django.views.generic import UpdateView
+
 from dynamic_preferences.registries import global_preferences_registry
 
 global_preferences = global_preferences_registry.manager()
 
 from core.util import get_permission_objects_from_string
-from membership_file.account_pages.views import MembershipChangeView, MembershipDataView
+from user_interaction.accountcollective import AccountViewMixin
+from utils.testing.view_test_utils import ViewValidityMixin
+
 from membership_file.forms import MemberForm
 from membership_file.models import Member, MemberYear
 from membership_file.util import MembershipRequiredMixin
-from user_interaction.accountcollective import AccountViewMixin
-from utils.testing.view_test_utils import ViewValidityMixin
+from membership_file.account_pages.views import MembershipDataView, MembershipChangeView
 
 
 class MembershipDataViewTestCase(ViewValidityMixin, TestCase):

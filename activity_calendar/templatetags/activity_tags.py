@@ -1,9 +1,10 @@
 from django import template
-from django.template.defaultfilters import date as format_date
 from django.utils import timezone
+from django.template.defaultfilters import date as format_date
 
 from activity_calendar.constants import SlotCreationType
 from activity_calendar.models import Activity, ActivityMoment
+
 
 register = template.Library()
 

@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from nextcloud_integration.models import SquireNextCloudFile, SquireNextCloudFolder
+from nextcloud_integration.models import SquireNextCloudFolder, SquireNextCloudFile
 
 
 @admin.register(SquireNextCloudFolder)

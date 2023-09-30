@@ -1,15 +1,16 @@
 from django.contrib import messages
 from django.contrib.auth.models import User
-from django.test import Client, TestCase
+from django.test import TestCase, Client
 from django.urls import reverse
 from django.views.generic import FormView
 
-from inventory.account_pages.views import *
+from utils.testing.view_test_utils import ViewValidityMixin
+from user_interaction.accountcollective import AccountViewMixin
+
 from inventory.forms import *
 from inventory.models import Ownership
+from inventory.account_pages.views import *
 from inventory.views import OwnershipMixin
-from user_interaction.accountcollective import AccountViewMixin
-from utils.testing.view_test_utils import ViewValidityMixin
 
 
 class TestMemberItemsOverview(TestCase):

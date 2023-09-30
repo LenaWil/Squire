@@ -1,9 +1,10 @@
-from django.urls import include, path, register_converter, reverse
+from django.urls import path, include, reverse, register_converter
+
+from committees.committeecollective import CommitteeBaseConfig
 
 from activity_calendar.committee_pages import views
-from activity_calendar.committee_pages.options import MessageOptions
 from activity_calendar.url_converters import DateTimeIsoConverter
-from committees.committeecollective import CommitteeBaseConfig
+from activity_calendar.committee_pages.options import MessageOptions
 
 register_converter(DateTimeIsoConverter, "dt")
 

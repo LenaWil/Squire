@@ -1,13 +1,8 @@
-from django.conf import settings
 from django.test import TestCase
+from django.conf import settings
 
 from achievements.models import Achievement, Category, Claimant
-from achievements.serializers import (
-    AchievementSerializer,
-    AchievementSortType,
-    CategorySerializer,
-    ClaimantSerializer,
-)
+from achievements.serializers import AchievementSerializer, CategorySerializer, ClaimantSerializer, AchievementSortType
 
 
 # Tests the Achievement-related serializers

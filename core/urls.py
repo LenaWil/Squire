@@ -1,13 +1,12 @@
 from django.conf import settings
 from django.contrib.auth import views as djangoViews
-from django.urls import include, path
+from django.urls import path, include
 from django.views.i18n import JavaScriptCatalog
 from martor.views import markdownfy_view
 
 from core.status_collective import registry
-
+from .forms import LoginForm, PasswordResetForm, PasswordResetConfirmForm
 from . import views
-from .forms import LoginForm, PasswordResetConfirmForm, PasswordResetForm
 
 app_name = "core"
 

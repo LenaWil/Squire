@@ -1,8 +1,8 @@
 from django.test import TestCase
 
-from membership_file.forms import ContinueMembershipForm
-from membership_file.models import Member, Membership, MemberYear
 from utils.testing.form_test_util import FormValidityMixin
+from membership_file.forms import ContinueMembershipForm
+from membership_file.models import Member, MemberYear, Membership
 
 
 class ContinueMembershipFormTest(FormValidityMixin, TestCase):

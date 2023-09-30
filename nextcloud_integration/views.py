@@ -1,19 +1,22 @@
-from django.contrib.auth.mixins import PermissionRequiredMixin
-from django.contrib.messages import error as error_msg
 from django.http.response import HttpResponse, HttpResponseRedirect
-from django.shortcuts import get_object_or_404
+from django.contrib.messages import error as error_msg
+from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.template.response import TemplateResponse
 from django.urls import reverse_lazy
 from django.views import View
-from django.views.generic import FormView, ListView
 from django.views.generic.detail import SingleObjectMixin
-from easywebdav import OperationFailed
-from requests.exceptions import ConnectionError
+from django.views.generic import ListView, FormView
+from django.shortcuts import get_object_or_404
 
-from membership_file.util import MembershipRequiredMixin, user_is_current_member
-from nextcloud_integration.forms import *
-from nextcloud_integration.models import SquireNextCloudFile, SquireNextCloudFolder
+from requests.exceptions import ConnectionError
+from easywebdav import OperationFailed
+
+from membership_file.util import user_is_current_member, MembershipRequiredMixin
+
 from nextcloud_integration.nextcloud_client import construct_client
+from nextcloud_integration.forms import *
+from nextcloud_integration.models import SquireNextCloudFolder, SquireNextCloudFile
+
 
 __all__ = [
     "SiteDownloadView",

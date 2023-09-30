@@ -1,6 +1,6 @@
-from django.contrib.auth.models import Group, Permission, User
-from django.contrib.messages import constants as msg_constants
 from django.core.exceptions import PermissionDenied
+from django.contrib.auth.models import Group, User, Permission
+from django.contrib.messages import constants as msg_constants
 from django.http import Http404, HttpResponse
 from django.template.response import TemplateResponse
 from django.test import Client, RequestFactory
@@ -245,4 +245,4 @@ class TestMixinMixin:
             raise AssertionError(f"Response was not successful. It returned code {response.status_code} instead.")
         if response.content != b"test successful":
             # HttpResponse content property is in byte form
-            raise AssertionError(f"Response was not successful. It returned unexpected html content")
+            raise AssertionError("Response was not successful. It returned unexpected html content")

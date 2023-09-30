@@ -1,8 +1,9 @@
+from django.forms import CharField, IntegerField, ChoiceField
 from django.db.models import Q
-from django.forms import CharField, ChoiceField, IntegerField
+
+from utils.forms import FilterForm
 
 from boardgames.models import BoardGame
-from utils.forms import FilterForm
 
 
 class BoardgameFilterForm(FilterForm):

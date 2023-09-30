@@ -8,4 +8,4 @@ profile = "black"
 [tool.pytest.ini_options]
 # needed for VS Code integration
 DJANGO_SETTINGS_MODULE = "squire.settings"
-python_files = ["**/tests/*.py"]
+python_files = ["**/tests/**.py"]

@@ -1,9 +1,9 @@
 from datetime import timedelta
-from unittest import skip
 
 from django.utils import dateparse
 from django_test_migrations.contrib.unittest_case import MigratorTestCase
 from recurrence import deserialize as deserialize_recurrence_test
+from unittest import skip
 
 from core.tests.util import suppress_warnings
 

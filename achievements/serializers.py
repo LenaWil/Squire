@@ -1,9 +1,9 @@
-from enum import Enum
-
-from django.db.models import Case, Count, Max, When
 from rest_framework import serializers
+from django.db.models import Count, Max, When, Case
 
 from .models import Achievement, Category, Claimant
+
+from enum import Enum
 
 
 # Enumeration that specifies sorting options for achievements

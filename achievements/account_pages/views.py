@@ -1,8 +1,9 @@
 from django.views.generic import TemplateView
 
-from achievements.models import Category
-from achievements.serializers import AchievementSortType, CategorySerializer
 from user_interaction.accountcollective import AccountViewMixin
+
+from achievements.models import Category
+from achievements.serializers import CategorySerializer, AchievementSortType
 
 
 class AchievementAccountView(AccountViewMixin, TemplateView):

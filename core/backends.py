@@ -1,7 +1,7 @@
 from django.contrib.auth.backends import ModelBackend
-from dynamic_preferences.registries import global_preferences_registry
-
 from membership_file.util import get_member_from_user
+
+from dynamic_preferences.registries import global_preferences_registry
 
 # #####################################################################################
 # Backend that provides default permissions for everyone, logged in users, and members

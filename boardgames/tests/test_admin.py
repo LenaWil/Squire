@@ -1,11 +1,12 @@
 from django.contrib.admin.sites import AdminSite
 from django.test import TestCase
 from django.urls import reverse
-
 from achievements.admin import AchievementItemInline
-from boardgames.admin import BoardgameAdmin, ItemAdmin
-from boardgames.models import BoardGame
+
 from utils.testing.view_test_utils import ViewValidityMixin
+
+from boardgames.models import BoardGame
+from boardgames.admin import BoardgameAdmin, ItemAdmin
 
 
 class DummyBoardgameAdmin(BoardgameAdmin):

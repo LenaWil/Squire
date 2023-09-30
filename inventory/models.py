@@ -1,14 +1,15 @@
 import os
 
-from django.contrib.auth.models import Group, User
-from django.contrib.contenttypes.fields import GenericForeignKey, GenericRelation
-from django.contrib.contenttypes.models import ContentType
-from django.core.exceptions import ValidationError
 from django.db import models
+from django.core.exceptions import ValidationError
+from django.contrib.auth.models import Group, User
+from django.contrib.contenttypes.models import ContentType
+from django.contrib.contenttypes.fields import GenericForeignKey, GenericRelation
 from django.utils import timezone
 from django.utils.text import slugify
 
 from membership_file.models import Member
+
 
 __all__ = ["valid_item_class_ids", "Ownership", "Item", "MiscellaneousItem"]
 

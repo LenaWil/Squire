@@ -1,14 +1,15 @@
 import os
 
-from django.contrib.contenttypes.fields import GenericRelation
+from django.db import models
 from django.core.exceptions import ValidationError
 from django.core.validators import MaxValueValidator, MinValueValidator
-from django.db import models
+from django.contrib.contenttypes.fields import GenericRelation
 from django.forms.widgets import Textarea
 from django.utils.text import slugify
 
 from core.fields import MarkdownTextField
 from inventory.models import Item
+
 
 __all__ = [
     "RoleplayingSystem",

@@ -1,19 +1,19 @@
 from datetime import datetime
-
-from django.contrib import messages
 from django.contrib.auth.models import Permission
+from django.contrib import messages
 from django.test import TestCase
 from django.urls import reverse
 from django.utils import dateparse
-from django.views.generic import FormView, ListView
+from django.views.generic import ListView, FormView
+
+from activity_calendar.models import Activity, OrganiserLink
+from committees.tests.committee_pages.utils import AssocationGroupTestingMixin
+from committees.mixins import AssociationGroupMixin
+from core.tests.util import suppress_warnings
+from utils.testing.view_test_utils import ViewValidityMixin
 
 from activity_calendar.committee_pages.forms import *
 from activity_calendar.committee_pages.views import *
-from activity_calendar.models import Activity, OrganiserLink
-from committees.mixins import AssociationGroupMixin
-from committees.tests.committee_pages.utils import AssocationGroupTestingMixin
-from core.tests.util import suppress_warnings
-from utils.testing.view_test_utils import ViewValidityMixin
 
 
 class TestCommitteeActivityOverview(AssocationGroupTestingMixin, ViewValidityMixin, TestCase):

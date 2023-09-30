@@ -1,4 +1,4 @@
-from django.contrib.admin.models import ADDITION, LogEntry
+from django.contrib.admin.models import LogEntry, ADDITION
 from django.contrib.auth import get_user_model
 from django.contrib.contenttypes.models import ContentType
 from django.test.testcases import TestCase

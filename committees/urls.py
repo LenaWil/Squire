@@ -1,9 +1,10 @@
-from django.urls import path, register_converter, reverse_lazy
+from django.urls import path, reverse_lazy, register_converter
 from django.views.generic.base import RedirectView
 
+from committees.views import *
 from committees.committeecollective import registry
 from committees.url_converters import AssociationgroupConverter
-from committees.views import *
+
 
 register_converter(AssociationgroupConverter, "assoc_group")
 

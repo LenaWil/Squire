@@ -1,9 +1,9 @@
-from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_safe
 
 from .models import Category
-from .serializers import AchievementSortType, CategorySerializer
+from .serializers import CategorySerializer, AchievementSortType
 
 
 # View all Achievements Page

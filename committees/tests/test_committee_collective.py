@@ -1,11 +1,10 @@
-from unittest.mock import Mock, patch
-
-from django.contrib.auth.models import AnonymousUser, User
-from django.test import Client, RequestFactory, TestCase
+from django.contrib.auth.models import User, AnonymousUser
+from django.test import TestCase, Client, RequestFactory
+from unittest.mock import patch, Mock
 
 from committees.committeecollective import CommitteeBaseConfig, registry
+from committees.options import settings_options_registry, SettingsOptionBase
 from committees.models import AssociationGroup
-from committees.options import SettingsOptionBase, settings_options_registry
 
 
 class CommitteeConfigTestCase(TestCase):

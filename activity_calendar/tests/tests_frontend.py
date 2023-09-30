@@ -1,6 +1,6 @@
 from django.test import TestCase
 
-from core.tests.util import TestPublicUser, check_http_response
+from core.tests.util import check_http_response, TestPublicUser
 
 
 class TestActivityCalendarFrontEndViews(TestCase):

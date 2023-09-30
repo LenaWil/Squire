@@ -1,9 +1,11 @@
 from django.contrib.contenttypes.models import ContentType
 from django.views.generic import ListView
 
+
+from utils.views import SearchFormMixin
+
 from boardgames.forms import BoardgameFilterForm
 from boardgames.models import BoardGame
-from utils.views import SearchFormMixin
 
 
 class BoardGameView(SearchFormMixin, ListView):

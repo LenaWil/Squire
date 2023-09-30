@@ -1,14 +1,12 @@
-from functools import wraps
-
 from django.conf import settings
-from django.contrib.auth import REDIRECT_FIELD_NAME
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth import REDIRECT_FIELD_NAME
 from django.http import HttpResponseRedirect
 from django.shortcuts import resolve_url
+from functools import wraps
 
 from membership_file.models import Member
-
 from .exceptions import UserIsNotCurrentMember
 
 

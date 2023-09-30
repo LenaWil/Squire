@@ -2,11 +2,7 @@ from django.contrib.auth.models import Permission
 from django.core.exceptions import ValidationError
 from django.test import TestCase
 
-from committees.models import (
-    AssociationGroup,
-    AssociationGroupMembership,
-    GroupExternalUrl,
-)
+from committees.models import AssociationGroup, GroupExternalUrl, AssociationGroupMembership
 
 
 class TestAssociationGroup(TestCase):

@@ -1,7 +1,7 @@
 import os
 
-from django.conf import settings
 from django.test import override_settings
+from django.conf import settings
 
 
 def set_media_test_folder():

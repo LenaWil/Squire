@@ -1,10 +1,11 @@
 from django.contrib.auth.models import Permission
 from django.core.exceptions import ImproperlyConfigured
 from django.template.loader import get_template
-from django.urls import include, path, reverse_lazy
+from django.urls import path, include, reverse_lazy
+
+from utils.auth_utils import get_perm_from_name
 
 from committees.views import BaseSettingsUpdateView
-from utils.auth_utils import get_perm_from_name
 
 
 class OptionsRegistry:

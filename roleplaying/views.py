@@ -3,16 +3,17 @@ import os
 from django.contrib import messages
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.contrib.contenttypes.models import ContentType
-from django.http import FileResponse, Http404
+from django.http import Http404, FileResponse
 from django.shortcuts import get_object_or_404
 from django.urls import reverse
 from django.utils.text import slugify
-from django.views.generic import DetailView, ListView, UpdateView, View
+from django.views.generic import ListView, View, DetailView, UpdateView
 
+from utils.views import SearchFormMixin
 from membership_file.views import MembershipRequiredMixin
+
 from roleplaying.forms import RoleplayingSystemUpdateForm
 from roleplaying.models import RoleplayingItem, RoleplayingSystem
-from utils.views import SearchFormMixin
 
 
 class RoleplaySystemView(SearchFormMixin, ListView):

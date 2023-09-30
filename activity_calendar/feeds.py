@@ -1,21 +1,24 @@
-from datetime import date, datetime, timedelta
-
 import recurrence
+
+from datetime import datetime, date, timedelta
+
 from django.conf import settings
-from django.shortcuts import get_object_or_404
 from django.urls import reverse_lazy
 from django.utils import timezone
+from django.shortcuts import get_object_or_404
 from django.utils.text import slugify
+
 from django_ical import feedgenerator
 from django_ical.feedgenerator import ICal20Feed
 from django_ical.utils import build_rrule_from_recurrences_rrule
 from django_ical.views import ICalFeed
 
-import activity_calendar.util as util
 from membership_file.models import Member
 
-from .constants import ActivityStatus, ActivityType
 from .models import Activity, ActivityMoment, Calendar
+from .constants import ActivityStatus, ActivityType
+import activity_calendar.util as util
+
 
 # Monkey-patch; Why is this not open for extension in the first place?
 feedgenerator.ITEM_EVENT_FIELD_MAP = (

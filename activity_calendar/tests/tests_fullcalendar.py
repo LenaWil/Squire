@@ -1,12 +1,12 @@
-import json
 from datetime import datetime, timedelta
-
-from django.test import Client, TestCase
+from django.test import TestCase, Client
 from django.utils import timezone
+import json
+
+from core.tests.util import suppress_warnings
 
 from activity_calendar.constants import ActivityType
 from activity_calendar.models import Activity
-from core.tests.util import suppress_warnings
 
 
 def compare_iso_datetimes(dt_1, dt_2):

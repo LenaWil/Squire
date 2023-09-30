@@ -1,6 +1,6 @@
 from django.contrib import messages
 from django.contrib.auth.mixins import PermissionRequiredMixin
-from django.views.generic import FormView, ListView
+from django.views.generic import ListView, FormView
 
 from committees.mixins import GroupSettingsMixin
 from committees.models import AssociationGroup

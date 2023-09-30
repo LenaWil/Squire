@@ -3,15 +3,16 @@ from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.contrib.auth.models import Permission
 from django.test import TestCase
 from django.urls import reverse, reverse_lazy
-from django.views.generic import DetailView, ListView, UpdateView
+from django.views.generic import DetailView, UpdateView, ListView
 
 from core.tests.util import suppress_warnings
 from membership_file.util import MembershipRequiredMixin
-from roleplaying.models import RoleplayingItem, RoleplayingSystem
-from roleplaying.views import RoleplaySystemView, SystemDetailView, SystemUpdateView
 from utils.testing.media_root_override import override_media_folder
 from utils.testing.view_test_utils import ViewValidityMixin
 from utils.views import SearchFormMixin
+
+from roleplaying.models import RoleplayingSystem, RoleplayingItem
+from roleplaying.views import RoleplaySystemView, SystemDetailView, SystemUpdateView
 
 
 class TestRoleplaySystemView(ViewValidityMixin, TestCase):

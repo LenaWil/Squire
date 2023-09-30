@@ -1,12 +1,11 @@
-from unittest.mock import Mock, patch
-
 from django.contrib.auth.models import User
 from django.test import TestCase
+from unittest.mock import patch, Mock
 
-from committees.committeecollective import CommitteeBaseConfig, registry
 from committees.models import AssociationGroup
 from committees.templatetags.association_group_config_tags import *
 from committees.templatetags.association_group_tags import *
+from committees.committeecollective import CommitteeBaseConfig, registry
 
 
 class AssociationConfigTagsTestCase(TestCase):

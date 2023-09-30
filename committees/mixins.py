@@ -1,4 +1,4 @@
-from django.core.exceptions import ImproperlyConfigured, PermissionDenied
+from django.core.exceptions import PermissionDenied, ImproperlyConfigured
 
 from utils.viewcollectives import *
 

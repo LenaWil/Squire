@@ -1,5 +1,5 @@
-from django.template import Context, Template
 from django.test import TestCase
+from django.template import Context, Template
 
 
 # Tests usage of custom template tags and filters

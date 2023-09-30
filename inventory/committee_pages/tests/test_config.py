@@ -1,9 +1,10 @@
 from django.contrib.auth.models import Permission
-from django.test import Client, TestCase
+from django.test import TestCase, Client
 from django.urls import reverse
 
-from committees.committeecollective import registry
 from committees.models import AssociationGroup
+from committees.committeecollective import registry
+
 from inventory.committee_pages.config import InventoryConfig
 from inventory.models import MiscellaneousItem
 

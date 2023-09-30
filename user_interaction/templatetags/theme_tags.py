@@ -1,6 +1,6 @@
 from django import template
 
-from user_interaction.themes import DEFAULT_THEME, THEMES
+from user_interaction.themes import THEMES, DEFAULT_THEME
 
 register = template.Library()
 

@@ -1,4 +1,4 @@
-from django.urls import include, path
+from django.urls import path, include
 
 from user_interaction.accountcollective import AccountBaseConfig
 

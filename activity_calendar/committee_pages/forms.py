@@ -3,6 +3,7 @@ import datetime
 from django import forms
 from django.forms import ModelForm, ValidationError
 from django.utils import timezone
+from django.forms.widgets import DateTimeInput
 
 from activity_calendar.committee_pages.utils import (
     create_meeting_activity,

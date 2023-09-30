@@ -1,4 +1,4 @@
-from django.contrib.auth.models import AnonymousUser, User
+from django.contrib.auth.models import User, AnonymousUser
 from django.test import TestCase
 
 from committees.models import AssociationGroup

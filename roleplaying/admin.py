@@ -1,6 +1,6 @@
 from django.contrib import admin
-
 from achievements.admin import AchievementItemInline
+
 from activity_calendar.admin import MarkdownImageInlineAdmin
 from inventory.admin import ItemAdmin
 from roleplaying.forms import RoleplayingSystemAdminForm

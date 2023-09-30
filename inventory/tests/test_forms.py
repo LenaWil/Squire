@@ -1,12 +1,12 @@
 from django import forms
 from django.contrib.auth.models import Group, User
 from django.contrib.contenttypes.models import ContentType
-from django.test import TestCase
 from django.utils.timezone import now
+from django.test import TestCase
 
-from inventory.forms import *
-from inventory.models import MiscellaneousItem, Ownership
 from utils.testing import FormValidityMixin
+from inventory.forms import *
+from inventory.models import Ownership, MiscellaneousItem
 
 
 class TestOwnershipRemovalForm(FormValidityMixin, TestCase):

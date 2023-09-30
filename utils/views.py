@@ -1,6 +1,7 @@
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-from django.contrib.messages import success, warning
 from django.http.response import HttpResponseRedirect
+from django.contrib.messages import success, warning
+
 
 from utils.forms import get_basic_filter_by_field_form
 

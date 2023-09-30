@@ -1,9 +1,8 @@
 from typing import Optional
-
 from django.apps import apps
 from django.urls import path
-
 from mailcow_integration.squire_mailcow import get_mailcow_manager
+
 from user_interaction.accountcollective import AccountBaseConfig
 
 from .views import TabbedEmailPreferencesChangeView

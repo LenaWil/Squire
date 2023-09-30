@@ -1,13 +1,9 @@
 from typing import Dict, List
-
 from django.test import TestCase
-from dynamic_preferences.types import BasePreferenceType
 from dynamic_preferences.users.registries import user_preferences_registry
+from dynamic_preferences.types import BasePreferenceType
 
-from mailcow_integration.dynamic_preferences_registry import (
-    alias_address_to_id,
-    register_preferences,
-)
+from mailcow_integration.dynamic_preferences_registry import alias_address_to_id, register_preferences
 
 ##################################################################################
 # Test cases for email preferences

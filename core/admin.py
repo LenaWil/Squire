@@ -1,7 +1,7 @@
 from django.conf import settings
 from django.contrib import admin
-from django.contrib.auth.admin import GroupAdmin, UserAdmin
 from django.contrib.auth.models import Group, User
+from django.contrib.auth.admin import GroupAdmin, UserAdmin
 from django.contrib.contenttypes.admin import GenericTabularInline
 from django.contrib.contenttypes.models import ContentType
 from django.db.models import CharField, Q, Value
@@ -13,10 +13,10 @@ from django.utils.translation import gettext_lazy as _
 from dynamic_preferences.admin import GlobalPreferenceAdmin
 from dynamic_preferences.models import GlobalPreferenceModel
 
+from .models import MarkdownImage, PresetImage, Shortcut
+
 from core.forms import MarkdownImageAdminForm
 from utils.forms import RequestUserToFormModelAdminMixin
-
-from .models import MarkdownImage, PresetImage, Shortcut
 
 
 class DisableModificationsAdminMixin:

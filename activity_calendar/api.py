@@ -1,11 +1,12 @@
 from datetime import datetime
 
-from django.http import HttpResponseBadRequest, JsonResponse
+from django.http import JsonResponse
 from django.utils import timezone
 from django.views.decorators.http import require_safe
+from django.http import HttpResponseBadRequest
 
-from .constants import ActivityType
 from .models import Activity
+from .constants import ActivityType
 
 
 def get_json_from_activity_moment(activity_moment, user=None):

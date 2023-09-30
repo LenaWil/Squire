@@ -1,18 +1,13 @@
-from django.contrib.auth import PermissionDenied, get_user
-from django.contrib.auth.models import Permission, User
-from django.contrib.messages import DEBUG, ERROR, SUCCESS, add_message
+from django.contrib.auth import get_user, PermissionDenied
+from django.contrib.auth.models import User, Permission
+from django.contrib.messages import add_message, DEBUG, ERROR, SUCCESS
 from django.contrib.messages.storage.base import Message
-from django.http import (
-    Http404,
-    HttpResponse,
-    HttpResponseForbidden,
-    HttpResponseRedirect,
-)
+from django.http import HttpResponse, Http404, HttpResponseForbidden, HttpResponseRedirect
 from django.test import TestCase
 from django.views.generic import View
 
-from utils.testing.view_test_utils import TestMixinMixin, ViewValidityMixin
 from utils.tests import raisesAssertionError
+from utils.testing.view_test_utils import ViewValidityMixin, TestMixinMixin
 
 
 class TestMessageView(View):

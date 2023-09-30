@@ -2,14 +2,9 @@ from functools import wraps
 from typing import Callable, Tuple
 
 from django.apps import apps
-from django.db.models.signals import (
-    ModelSignal,
-    post_delete,
-    post_save,
-    pre_delete,
-    pre_save,
-)
+from django.db.models.signals import pre_save, post_save, pre_delete, post_delete, ModelSignal
 from dynamic_preferences.registries import global_preferences_registry
+
 
 from mailcow_integration.squire_mailcow import SquireMailcowManager, get_mailcow_manager
 

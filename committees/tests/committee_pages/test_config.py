@@ -1,13 +1,11 @@
+from django.test import TestCase
 from unittest.mock import Mock, patch
 
-from django.test import TestCase
-
-from committees.committee_pages.config import (
-    AssociationGroupHomeConfig,
-    AssociationGroupSettingsConfig,
-)
-from committees.committeecollective import CommitteeBaseConfig, registry
 from utils.testing import return_boolean
+
+from committees.committeecollective import CommitteeBaseConfig
+from committees.committee_pages.config import AssociationGroupHomeConfig, AssociationGroupSettingsConfig
+from committees.committeecollective import registry
 
 
 class AssociationGroupHomeConfigTestCase(TestCase):

@@ -1,35 +1,38 @@
 import datetime
+
+from django.test import TestCase, Client
+from django.contrib import messages
+from django.contrib.auth.models import Permission
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.test.utils import override_settings
+from django.utils import timezone, dateparse
+from django.utils.translation import gettext_lazy as _
+from django.urls import reverse
+from django.views.generic import ListView, FormView, TemplateView
+
 from unittest.mock import patch
 
-from django.contrib import messages
-from django.contrib.auth import get_user_model
-from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-from django.contrib.auth.models import Permission
-from django.test import Client, TestCase
-from django.test.utils import override_settings
-from django.urls import reverse
-from django.utils import dateparse, timezone
-from django.utils.translation import gettext_lazy as _
-from django.views.generic import FormView, ListView, TemplateView
-
-from activity_calendar.constants import ActivityStatus, ActivityType, SlotCreationType
-from activity_calendar.forms import *
 from activity_calendar.models import *
 from activity_calendar.views import (
+    CreateSlotView,
+    ActivityMomentWithSlotsView,
+    ActivitySimpleMomentView,
+    EditActivityMomentView,
+    ActivityOverview,
     ActivityMixin,
     ActivityMomentCancelledView,
-    ActivityMomentNoSignupView,
-    ActivityMomentWithSlotsView,
-    ActivityOverview,
-    ActivitySimpleMomentView,
     CancelActivityMomentView,
-    CreateSlotView,
-    EditActivityMomentView,
+    ActivityMomentNoSignupView,
 )
-from core.tests.util import suppress_warnings
-from utils.testing.view_test_utils import TestMixinMixin, ViewValidityMixin
+from activity_calendar.forms import *
+from activity_calendar.constants import ActivityType, SlotCreationType, ActivityStatus
 
-from . import mock_is_organiser, mock_now
+from core.tests.util import suppress_warnings
+from utils.testing.view_test_utils import ViewValidityMixin, TestMixinMixin
+
+from . import mock_now, mock_is_organiser
+
+from django.contrib.auth import get_user_model
 
 User = get_user_model()
 

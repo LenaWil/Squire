@@ -2,14 +2,13 @@ from datetime import datetime
 
 from django.contrib import admin, messages
 from import_export.admin import ExportActionMixin
-from import_export.formats.base_formats import CSV, ODS, TSV, XLSX
+from import_export.formats.base_formats import CSV, TSV, ODS, XLSX
 
+from .forms import AdminMemberForm
+from .models import Member, MemberLog, MemberLogField, Room, MemberYear, Membership
 from core.admin import DisableModificationsAdminMixin, URLLinkInlineAdminMixin
 from membership_file.export import MemberResource, MembersFinancialResource
 from utils.forms import RequestUserToFormModelAdminMixin
-
-from .forms import AdminMemberForm
-from .models import Member, MemberLog, MemberLogField, Membership, MemberYear, Room
 
 
 class TSVUnicodeBOM(TSV):

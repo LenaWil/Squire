@@ -1,5 +1,4 @@
 from django import template
-
 from membership_file.util import get_member_from_user
 
 register = template.Library()

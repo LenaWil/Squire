@@ -1,24 +1,24 @@
-from os.path import exists as file_exists
-from unittest.mock import patch
-
 from django.test import TestCase
+from os.path import exists as file_exists
 from requests.models import Response
+
+from unittest.mock import patch
 
 from nextcloud_integration.nextcloud_client import NextCloudClient as Client
 from nextcloud_integration.nextcloud_client import construct_client
 from nextcloud_integration.nextcloud_resources import (
+    NextCloudFolder,
+    NextCloudFile,
+    get_file_type,
+    WordFileType,
     AbstractFileType,
     CompressedFileType,
     CreativeFileType,
     ExcelFileType,
     ImageFileType,
-    NextCloudFile,
-    NextCloudFolder,
     PDFFileType,
     PowerpointFileType,
     TextFileType,
-    WordFileType,
-    get_file_type,
 )
 
 

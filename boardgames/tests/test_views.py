@@ -1,9 +1,10 @@
 from django.test import TestCase
 from django.urls import reverse
 
+from utils.testing.view_test_utils import ViewValidityMixin
+
 from boardgames.forms import BoardgameFilterForm
 from boardgames.views import *
-from utils.testing.view_test_utils import ViewValidityMixin
 
 
 class TestBoardGameView(ViewValidityMixin, TestCase):
