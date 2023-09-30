@@ -12,11 +12,12 @@ from mailcow_integration.api.client import MailcowAPIClient, RequestType
 from mailcow_integration.api.exceptions import *
 from mailcow_integration.api.interface.alias import MailcowAlias
 from mailcow_integration.api.interface.rspamd import RspamdSettings
-from mailcow_integration.squire_mailcow import (SquireMailcowManager,
-                                                get_mailcow_manager)
-from mailcow_integration.tests.api.test_interfaces import (get_alias_json,
-                                                           get_mailbox_json,
-                                                           get_rspamd_json)
+from mailcow_integration.squire_mailcow import SquireMailcowManager, get_mailcow_manager
+from mailcow_integration.tests.api.test_interfaces import (
+    get_alias_json,
+    get_mailbox_json,
+    get_rspamd_json,
+)
 
 ##################################################################################
 # Test cases for the mailcow client

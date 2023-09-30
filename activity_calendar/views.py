@@ -2,8 +2,11 @@ from datetime import datetime, timedelta
 from urllib.parse import quote, unquote
 
 from django.contrib import messages
-from django.contrib.auth.mixins import (AccessMixin, LoginRequiredMixin,
-                                        UserPassesTestMixin)
+from django.contrib.auth.mixins import (
+    AccessMixin,
+    LoginRequiredMixin,
+    UserPassesTestMixin,
+)
 from django.core.exceptions import PermissionDenied
 from django.http import Http404, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render

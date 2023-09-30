@@ -9,8 +9,7 @@ from membership_file.export import MemberResource, MembersFinancialResource
 from utils.forms import RequestUserToFormModelAdminMixin
 
 from .forms import AdminMemberForm
-from .models import (Member, MemberLog, MemberLogField, Membership, MemberYear,
-                     Room)
+from .models import Member, MemberLog, MemberLogField, Membership, MemberYear, Room
 
 
 class TSVUnicodeBOM(TSV):

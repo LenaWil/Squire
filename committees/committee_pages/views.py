@@ -2,10 +2,12 @@ from django.http import Http404
 from django.urls import reverse_lazy
 from django.views.generic import FormView, TemplateView
 
-from committees.forms import (AddOrUpdateExternalUrlForm,
-                              AssociationGroupMembershipForm,
-                              AssociationGroupUpdateForm,
-                              DeleteGroupExternalUrlForm)
+from committees.forms import (
+    AddOrUpdateExternalUrlForm,
+    AssociationGroupMembershipForm,
+    AssociationGroupUpdateForm,
+    DeleteGroupExternalUrlForm,
+)
 from committees.mixins import AssociationGroupMixin, GroupSettingsMixin
 from utils.views import PostOnlyFormViewMixin
 

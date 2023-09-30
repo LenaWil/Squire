@@ -9,15 +9,20 @@ from django.utils.html import format_html
 
 from committees.models import AssociationGroup
 from core.tests.util import suppress_errors
-from mailcow_integration.admin_status.views import (AliasInfos, AliasStatus,
-                                                    MailcowStatusView)
+from mailcow_integration.admin_status.views import (
+    AliasInfos,
+    AliasStatus,
+    MailcowStatusView,
+)
 from mailcow_integration.api.exceptions import (
-    MailcowAPIAccessDenied, MailcowAPIReadWriteAccessDenied,
-    MailcowAuthException, MailcowException)
+    MailcowAPIAccessDenied,
+    MailcowAPIReadWriteAccessDenied,
+    MailcowAuthException,
+    MailcowException,
+)
 from mailcow_integration.api.interface.alias import MailcowAlias
 from mailcow_integration.api.interface.mailbox import MailcowMailbox
-from mailcow_integration.squire_mailcow import (AliasCategory,
-                                                SquireMailcowManager)
+from mailcow_integration.squire_mailcow import AliasCategory, SquireMailcowManager
 from membership_file.models import Member
 
 User = get_user_model()

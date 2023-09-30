@@ -4,12 +4,9 @@ from django.forms.formsets import BaseFormSet
 from django.forms.renderers import get_default_renderer
 from django.utils.text import slugify
 
-from nextcloud_integration.models import (SquireNextCloudFile,
-                                          SquireNextCloudFolder)
-from nextcloud_integration.nextcloud_client import (OperationFailed,
-                                                    construct_client)
-from nextcloud_integration.nextcloud_resources import (NextCloudFile,
-                                                       NextCloudFolder)
+from nextcloud_integration.models import SquireNextCloudFile, SquireNextCloudFolder
+from nextcloud_integration.nextcloud_client import OperationFailed, construct_client
+from nextcloud_integration.nextcloud_resources import NextCloudFile, NextCloudFolder
 from nextcloud_integration.widgets import NextcloudFileSelectWidget
 from utils.forms import FormGroup
 

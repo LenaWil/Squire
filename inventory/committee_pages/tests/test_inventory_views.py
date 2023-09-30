@@ -9,7 +9,9 @@ from committees.mixins import AssociationGroupMixin
 from committees.models import AssociationGroup
 from committees.tests.committee_pages.utils import AssocationGroupTestingMixin
 from inventory.committee_pages.views import (
-    AssociationGroupInventoryView, AssociationGroupItemLinkUpdateView)
+    AssociationGroupInventoryView,
+    AssociationGroupItemLinkUpdateView,
+)
 from inventory.forms import *
 from inventory.models import MiscellaneousItem, Ownership
 from inventory.views import OwnershipMixin

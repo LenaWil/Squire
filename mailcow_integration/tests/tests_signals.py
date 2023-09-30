@@ -8,9 +8,11 @@ from dynamic_preferences.registries import global_preferences_registry
 from committees.models import AssociationGroup, AssociationGroupMembership
 from core.tests.util import suppress_infos
 from mailcow_integration.api.exceptions import MailcowException
-from mailcow_integration.signals import (deregister_signals,
-                                         global_preference_required_for_signal,
-                                         register_signals)
+from mailcow_integration.signals import (
+    deregister_signals,
+    global_preference_required_for_signal,
+    register_signals,
+)
 from mailcow_integration.squire_mailcow import SquireMailcowManager
 from membership_file.models import Member, Membership, MemberYear
 

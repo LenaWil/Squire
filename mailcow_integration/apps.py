@@ -3,8 +3,7 @@ import logging
 from django.apps import AppConfig
 from django.conf import settings
 
-from mailcow_integration.signals import \
-    register_signals as register_mailcow_signals
+from mailcow_integration.signals import register_signals as register_mailcow_signals
 from mailcow_integration.squire_mailcow import SquireMailcowManager
 
 logger = logging.getLogger(__name__)

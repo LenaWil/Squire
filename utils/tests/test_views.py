@@ -10,11 +10,14 @@ from django.test import RequestFactory, TestCase
 from django.views import View
 from django.views.generic import FormView, ListView
 
+from utils.views import (
+    PostOnlyFormViewMixin,
+    RedirectMixin,
+    SearchFormMixin,
+    SuperUserRequiredMixin,
+)
+
 User = get_user_model()
-
-
-from utils.views import (PostOnlyFormViewMixin, RedirectMixin, SearchFormMixin,
-                         SuperUserRequiredMixin)
 
 
 class TestForm(Form):

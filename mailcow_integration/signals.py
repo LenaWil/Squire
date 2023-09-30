@@ -2,12 +2,16 @@ from functools import wraps
 from typing import Callable, Tuple
 
 from django.apps import apps
-from django.db.models.signals import (ModelSignal, post_delete, post_save,
-                                      pre_delete, pre_save)
+from django.db.models.signals import (
+    ModelSignal,
+    post_delete,
+    post_save,
+    pre_delete,
+    pre_save,
+)
 from dynamic_preferences.registries import global_preferences_registry
 
-from mailcow_integration.squire_mailcow import (SquireMailcowManager,
-                                                get_mailcow_manager)
+from mailcow_integration.squire_mailcow import SquireMailcowManager, get_mailcow_manager
 
 __all__ = ["register_signals", "deregister_signals", "global_preference_required_for_signal"]
 

@@ -5,8 +5,10 @@ from django.utils.text import slugify
 
 from inventory.models import Item
 from roleplaying.models import *
-from roleplaying.models import (get_roleplay_item_file_upload_path,
-                                get_system_image_upload_path)
+from roleplaying.models import (
+    get_roleplay_item_file_upload_path,
+    get_system_image_upload_path,
+)
 
 
 class TestRoleplayingSystem(TestCase):

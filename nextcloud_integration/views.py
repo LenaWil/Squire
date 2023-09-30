@@ -10,11 +10,9 @@ from django.views.generic.detail import SingleObjectMixin
 from easywebdav import OperationFailed
 from requests.exceptions import ConnectionError
 
-from membership_file.util import (MembershipRequiredMixin,
-                                  user_is_current_member)
+from membership_file.util import MembershipRequiredMixin, user_is_current_member
 from nextcloud_integration.forms import *
-from nextcloud_integration.models import (SquireNextCloudFile,
-                                          SquireNextCloudFolder)
+from nextcloud_integration.models import SquireNextCloudFile, SquireNextCloudFolder
 from nextcloud_integration.nextcloud_client import construct_client
 
 __all__ = [

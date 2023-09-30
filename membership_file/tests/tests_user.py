@@ -4,12 +4,13 @@ from django.contrib.auth.models import User
 from django.template import Context, Template
 from django.test import TestCase
 
-from core.tests.util import (TestAccountUser, TestPublicUser,
-                             check_http_response)
+from core.tests.util import TestAccountUser, TestPublicUser, check_http_response
 from membership_file.models import Member
 from membership_file.serializers import MemberSerializer
 from membership_file.tests.util import (
-    TestMemberUser, check_http_response_with_member_redirect)
+    TestMemberUser,
+    check_http_response_with_member_redirect,
+)
 
 ##################################################################################
 # Test cases for MemberLog-logic and Member deletion logic on the user-side

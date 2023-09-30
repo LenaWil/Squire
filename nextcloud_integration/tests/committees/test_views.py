@@ -10,10 +10,13 @@ from committees.tests.committee_pages.utils import AssocationGroupTestingMixin
 from nextcloud_integration.committee_pages.views import *
 from nextcloud_integration.models import SquireNextCloudFolder
 from nextcloud_integration.tests import patch_construction
-from nextcloud_integration.views import (FolderCreateView, FolderEditView,
-                                         FolderMixin,
-                                         NextcloudConnectionViewMixin,
-                                         SyncFileToFolderView)
+from nextcloud_integration.views import (
+    FolderCreateView,
+    FolderEditView,
+    FolderMixin,
+    NextcloudConnectionViewMixin,
+    SyncFileToFolderView,
+)
 from utils.testing.view_test_utils import TestMixinMixin, ViewValidityMixin
 
 

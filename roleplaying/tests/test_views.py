@@ -8,8 +8,7 @@ from django.views.generic import DetailView, ListView, UpdateView
 from core.tests.util import suppress_warnings
 from membership_file.util import MembershipRequiredMixin
 from roleplaying.models import RoleplayingItem, RoleplayingSystem
-from roleplaying.views import (RoleplaySystemView, SystemDetailView,
-                               SystemUpdateView)
+from roleplaying.views import RoleplaySystemView, SystemDetailView, SystemUpdateView
 from utils.testing.media_root_override import override_media_folder
 from utils.testing.view_test_utils import ViewValidityMixin
 from utils.views import SearchFormMixin

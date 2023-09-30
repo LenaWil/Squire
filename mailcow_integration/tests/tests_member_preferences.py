@@ -6,8 +6,7 @@ from django.test import RequestFactory, TestCase, override_settings
 
 from mailcow_integration.account_pages.forms import MemberMailPreferencesForm
 from mailcow_integration.account_pages.views import EmailPreferencesChangeView
-from mailcow_integration.dynamic_preferences_registry import \
-    register_preferences
+from mailcow_integration.dynamic_preferences_registry import register_preferences
 from mailcow_integration.squire_mailcow import SquireMailcowManager
 
 User = get_user_model()

@@ -2,8 +2,7 @@ from unittest.mock import Mock, patch
 
 from django.test import TestCase
 
-from committees.admin.forms import (AssociationGroupsTabAccessForm,
-                                    ConfigTabSelectWidget)
+from committees.admin.forms import AssociationGroupsTabAccessForm, ConfigTabSelectWidget
 from committees.admin.models import AssociationGroupPanelControl
 from committees.committee_pages.config import AssociationGroupHomeConfig
 from utils.testing.form_test_util import FormValidityMixin

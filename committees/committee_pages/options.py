@@ -3,8 +3,11 @@ from django.urls import path
 from committees.committee_pages.views import *
 from committees.forms import AssociationGroupUpdateForm
 from committees.models import AssociationGroup
-from committees.options import (SettingsOptionBase, SimpleFormSettingsOption,
-                                settings_options_registry)
+from committees.options import (
+    SettingsOptionBase,
+    SimpleFormSettingsOption,
+    settings_options_registry,
+)
 
 
 class HomeScreenTextOptions(SimpleFormSettingsOption):

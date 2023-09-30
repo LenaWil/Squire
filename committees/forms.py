@@ -2,8 +2,11 @@ from django.core.exceptions import ValidationError
 from django.forms import Form, IntegerField, ModelForm
 from django.forms.widgets import HiddenInput
 
-from committees.models import (AssociationGroup, AssociationGroupMembership,
-                               GroupExternalUrl)
+from committees.models import (
+    AssociationGroup,
+    AssociationGroupMembership,
+    GroupExternalUrl,
+)
 from core.forms import MarkdownForm
 
 

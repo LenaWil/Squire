@@ -2,9 +2,15 @@ from django.contrib.auth.models import User
 from django.db.utils import IntegrityError
 from django.test import TestCase
 
-from membership_file.models import (Member, MemberLog, MemberLogField,
-                                    MemberManager, Membership, MemberYear,
-                                    Room)
+from membership_file.models import (
+    Member,
+    MemberLog,
+    MemberLogField,
+    MemberManager,
+    Membership,
+    MemberYear,
+    Room,
+)
 
 ##################################################################################
 # Test the Member model's methods

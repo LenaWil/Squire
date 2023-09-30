@@ -12,18 +12,20 @@ from django.utils import dateparse, timezone
 from django.utils.translation import gettext_lazy as _
 from django.views.generic import FormView, ListView, TemplateView
 
-from activity_calendar.constants import (ActivityStatus, ActivityType,
-                                         SlotCreationType)
+from activity_calendar.constants import ActivityStatus, ActivityType, SlotCreationType
 from activity_calendar.forms import *
 from activity_calendar.models import *
-from activity_calendar.views import (ActivityMixin,
-                                     ActivityMomentCancelledView,
-                                     ActivityMomentNoSignupView,
-                                     ActivityMomentWithSlotsView,
-                                     ActivityOverview,
-                                     ActivitySimpleMomentView,
-                                     CancelActivityMomentView, CreateSlotView,
-                                     EditActivityMomentView)
+from activity_calendar.views import (
+    ActivityMixin,
+    ActivityMomentCancelledView,
+    ActivityMomentNoSignupView,
+    ActivityMomentWithSlotsView,
+    ActivityOverview,
+    ActivitySimpleMomentView,
+    CancelActivityMomentView,
+    CreateSlotView,
+    EditActivityMomentView,
+)
 from core.tests.util import suppress_warnings
 from utils.testing.view_test_utils import TestMixinMixin, ViewValidityMixin
 

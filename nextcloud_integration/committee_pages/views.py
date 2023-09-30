@@ -6,10 +6,13 @@ from django.views.generic import ListView, TemplateView, View
 from committees.mixins import AssociationGroupMixin
 from nextcloud_integration.models import SquireNextCloudFolder
 from nextcloud_integration.utils import refresh_status
-from nextcloud_integration.views import (FolderCreateView, FolderEditView,
-                                         FolderMixin,
-                                         NextcloudConnectionViewMixin,
-                                         SyncFileToFolderView)
+from nextcloud_integration.views import (
+    FolderCreateView,
+    FolderEditView,
+    FolderMixin,
+    NextcloudConnectionViewMixin,
+    SyncFileToFolderView,
+)
 
 __all__ = [
     "CloudFoldersOverview",

@@ -4,8 +4,7 @@ from django.test import TestCase
 from django.test.client import RequestFactory
 
 from inventory.models import MiscellaneousItem, Ownership
-from inventory.templatetags.inventory_tags import (get_owned_by,
-                                                   render_ownership_tags)
+from inventory.templatetags.inventory_tags import get_owned_by, render_ownership_tags
 from membership_file.models import Member
 
 

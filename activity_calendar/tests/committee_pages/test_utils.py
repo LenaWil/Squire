@@ -3,8 +3,10 @@ from datetime import timedelta
 from django.contrib.auth.models import Group
 from django.test import TestCase
 
-from activity_calendar.committee_pages.utils import (create_meeting_activity,
-                                                     get_meeting_activity)
+from activity_calendar.committee_pages.utils import (
+    create_meeting_activity,
+    get_meeting_activity,
+)
 from activity_calendar.constants import ActivityType
 from activity_calendar.models import Activity
 from committees.models import AssociationGroup

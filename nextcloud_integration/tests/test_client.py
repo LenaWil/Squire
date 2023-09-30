@@ -6,18 +6,20 @@ from requests.models import Response
 
 from nextcloud_integration.nextcloud_client import NextCloudClient as Client
 from nextcloud_integration.nextcloud_client import construct_client
-from nextcloud_integration.nextcloud_resources import (AbstractFileType,
-                                                       CompressedFileType,
-                                                       CreativeFileType,
-                                                       ExcelFileType,
-                                                       ImageFileType,
-                                                       NextCloudFile,
-                                                       NextCloudFolder,
-                                                       PDFFileType,
-                                                       PowerpointFileType,
-                                                       TextFileType,
-                                                       WordFileType,
-                                                       get_file_type)
+from nextcloud_integration.nextcloud_resources import (
+    AbstractFileType,
+    CompressedFileType,
+    CreativeFileType,
+    ExcelFileType,
+    ImageFileType,
+    NextCloudFile,
+    NextCloudFolder,
+    PDFFileType,
+    PowerpointFileType,
+    TextFileType,
+    WordFileType,
+    get_file_type,
+)
 
 
 class NextCloudClientTestCase(TestCase):

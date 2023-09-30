@@ -9,8 +9,7 @@ global_preferences = global_preferences_registry.manager()
 from core.tests.util import DynamicRegistryUsageMixin, suppress_warnings
 from membership_file.forms import ContinueMembershipForm
 from membership_file.models import MemberYear
-from membership_file.views import (ExtendMembershipSuccessView,
-                                   ExtendMembershipView)
+from membership_file.views import ExtendMembershipSuccessView, ExtendMembershipView
 from utils.testing.view_test_utils import ViewValidityMixin
 
 

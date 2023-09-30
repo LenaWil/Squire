@@ -10,8 +10,13 @@ from django.test import TestCase
 from django.utils import timezone
 from recurrence import deserialize as deserialize_recurrence_test
 
-from activity_calendar.models import (Activity, ActivityMoment, ActivitySlot,
-                                      MemberCalendarSettings, Participant)
+from activity_calendar.models import (
+    Activity,
+    ActivityMoment,
+    ActivitySlot,
+    MemberCalendarSettings,
+    Participant,
+)
 from core.models import PresetImage
 
 from . import mock_now

@@ -12,16 +12,18 @@ from requests.models import Response
 from core.tests.util import suppress_warnings
 from membership_file.util import user_is_current_member
 from nextcloud_integration.forms import *
-from nextcloud_integration.models import (SquireNextCloudFile,
-                                          SquireNextCloudFolder)
-from nextcloud_integration.nextcloud_resources import (NextCloudFile,
-                                                       NextCloudFolder)
-from nextcloud_integration.views import (DownloadFileview, FileBrowserView,
-                                         FolderCreateView, FolderEditView,
-                                         FolderMixin,
-                                         NextcloudConnectionViewMixin,
-                                         SiteDownloadView,
-                                         SyncFileToFolderView)
+from nextcloud_integration.models import SquireNextCloudFile, SquireNextCloudFolder
+from nextcloud_integration.nextcloud_resources import NextCloudFile, NextCloudFolder
+from nextcloud_integration.views import (
+    DownloadFileview,
+    FileBrowserView,
+    FolderCreateView,
+    FolderEditView,
+    FolderMixin,
+    NextcloudConnectionViewMixin,
+    SiteDownloadView,
+    SyncFileToFolderView,
+)
 from utils.testing.view_test_utils import TestMixinMixin, ViewValidityMixin
 
 from . import patch_construction

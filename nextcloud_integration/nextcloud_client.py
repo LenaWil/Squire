@@ -6,9 +6,11 @@ from django.utils.text import slugify
 from easywebdav import Client, OperationFailed
 
 from nextcloud_integration.exceptions import ClientNotImplemented
-from nextcloud_integration.nextcloud_resources import (NextCloudFile,
-                                                       NextCloudFolder,
-                                                       NextCloudResource)
+from nextcloud_integration.nextcloud_resources import (
+    NextCloudFile,
+    NextCloudFolder,
+    NextCloudResource,
+)
 
 __all__ = ["NextCloudFile", "NextCloudFolder"]
 

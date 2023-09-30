@@ -2,8 +2,12 @@ from django.contrib.auth import PermissionDenied, get_user
 from django.contrib.auth.models import Permission, User
 from django.contrib.messages import DEBUG, ERROR, SUCCESS, add_message
 from django.contrib.messages.storage.base import Message
-from django.http import (Http404, HttpResponse, HttpResponseForbidden,
-                         HttpResponseRedirect)
+from django.http import (
+    Http404,
+    HttpResponse,
+    HttpResponseForbidden,
+    HttpResponseRedirect,
+)
 from django.test import TestCase
 from django.views.generic import View
 

@@ -5,15 +5,18 @@ from django.contrib.contenttypes.models import ContentType
 from django.db.models import QuerySet
 from django.test import Client, TestCase
 from django.urls import reverse
-from django.views.generic import (CreateView, DetailView, FormView, ListView,
-                                  UpdateView)
+from django.views.generic import CreateView, DetailView, FormView, ListView, UpdateView
 
 from core.tests.util import suppress_warnings
 from inventory.forms import *
 from inventory.models import MiscellaneousItem, Ownership
 from inventory.views import *
-from inventory.views import (CatalogueMixin, ItemMixin,
-                             OwnershipCatalogueLinkMixin, OwnershipMixin)
+from inventory.views import (
+    CatalogueMixin,
+    ItemMixin,
+    OwnershipCatalogueLinkMixin,
+    OwnershipMixin,
+)
 from membership_file.models import Member
 from membership_file.tests.mixins import TestMixinWithMemberMiddleware
 from membership_file.util import MembershipRequiredMixin

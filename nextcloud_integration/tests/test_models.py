@@ -2,10 +2,8 @@ from django.core.exceptions import ValidationError
 from django.test import TestCase
 from django.urls import reverse
 
-from nextcloud_integration.models import (SquireNextCloudFile,
-                                          SquireNextCloudFolder)
-from nextcloud_integration.nextcloud_resources import (NextCloudFile,
-                                                       NextCloudFolder)
+from nextcloud_integration.models import SquireNextCloudFile, SquireNextCloudFolder
+from nextcloud_integration.nextcloud_resources import NextCloudFile, NextCloudFolder
 
 from . import patch_construction
 

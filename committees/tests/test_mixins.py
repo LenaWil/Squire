@@ -4,9 +4,11 @@ from django.contrib.auth.models import Permission
 from django.core.exceptions import ImproperlyConfigured, PermissionDenied
 from django.test import TestCase
 
-from committees.mixins import (AssociationGroupMixin,
-                               AssociationGroupPermissionRequiredMixin,
-                               GroupSettingsMixin)
+from committees.mixins import (
+    AssociationGroupMixin,
+    AssociationGroupPermissionRequiredMixin,
+    GroupSettingsMixin,
+)
 from committees.models import AssociationGroup
 from committees.tests import get_fake_config
 from membership_file.tests.mixins import TestMixinWithMemberMiddleware

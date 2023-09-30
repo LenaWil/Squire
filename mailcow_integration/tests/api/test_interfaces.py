@@ -4,8 +4,11 @@ from unittest import TestCase
 
 from mailcow_integration.api.interface.alias import AliasType, MailcowAlias
 from mailcow_integration.api.interface.mailbox import (
-    MailboxStatus, MailcowMailbox, QuarantaineNotificationCategory,
-    QuarantineNotification)
+    MailboxStatus,
+    MailcowMailbox,
+    QuarantaineNotificationCategory,
+    QuarantineNotification,
+)
 from mailcow_integration.api.interface.rspamd import RspamdSettings
 
 

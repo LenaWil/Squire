@@ -8,8 +8,12 @@ from django.contrib.auth.models import Group
 from django.forms.models import model_to_dict
 from django.test import RequestFactory, TestCase
 
-from utils.forms import (FormGroup, RequestUserToFormModelAdminMixin,
-                         UpdatingUserFormMixin, get_basic_filter_by_field_form)
+from utils.forms import (
+    FormGroup,
+    RequestUserToFormModelAdminMixin,
+    UpdatingUserFormMixin,
+    get_basic_filter_by_field_form,
+)
 from utils.testing import FormValidityMixin
 
 User = get_user_model()

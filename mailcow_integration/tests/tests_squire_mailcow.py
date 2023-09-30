@@ -13,8 +13,7 @@ from mailcow_integration.api.exceptions import MailcowException
 from mailcow_integration.api.interface.alias import MailcowAlias
 from mailcow_integration.api.interface.mailbox import MailcowMailbox
 from mailcow_integration.api.interface.rspamd import RspamdSettings
-from mailcow_integration.squire_mailcow import (AliasCategory,
-                                                SquireMailcowManager)
+from mailcow_integration.squire_mailcow import AliasCategory, SquireMailcowManager
 from membership_file.models import Member
 
 User = get_user_model()

@@ -14,17 +14,21 @@ from django.views.generic import TemplateView
 from committees.models import AssociationGroup
 from core.status_collective import AdminStatusViewMixin
 from mailcow_integration.api.exceptions import (
-    MailcowAPIAccessDenied, MailcowAPIReadWriteAccessDenied,
-    MailcowAuthException, MailcowException)
+    MailcowAPIAccessDenied,
+    MailcowAPIReadWriteAccessDenied,
+    MailcowAuthException,
+    MailcowException,
+)
 from mailcow_integration.api.interface.alias import MailcowAlias
 from mailcow_integration.api.interface.base import MailcowAPIResponse
 from mailcow_integration.api.interface.mailbox import MailcowMailbox
 from mailcow_integration.api.interface.rspamd import RspamdSettings
-from mailcow_integration.dynamic_preferences_registry import \
-    alias_address_to_id
-from mailcow_integration.squire_mailcow import (AliasCategory,
-                                                SquireMailcowManager,
-                                                get_mailcow_manager)
+from mailcow_integration.dynamic_preferences_registry import alias_address_to_id
+from mailcow_integration.squire_mailcow import (
+    AliasCategory,
+    SquireMailcowManager,
+    get_mailcow_manager,
+)
 
 logger = logging.getLogger(__name__)
 

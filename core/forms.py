@@ -1,12 +1,9 @@
 from django import forms
 from django.contrib.auth import authenticate, get_user_model
 from django.contrib.auth.forms import AuthenticationForm
-from django.contrib.auth.forms import \
-    PasswordChangeForm as DjangoPasswordChangeForm
-from django.contrib.auth.forms import \
-    PasswordResetForm as DjangoPasswordResetForm
-from django.contrib.auth.forms import \
-    SetPasswordForm as DjangoPasswordResetConfirmForm
+from django.contrib.auth.forms import PasswordChangeForm as DjangoPasswordChangeForm
+from django.contrib.auth.forms import PasswordResetForm as DjangoPasswordResetForm
+from django.contrib.auth.forms import SetPasswordForm as DjangoPasswordResetConfirmForm
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.contenttypes.models import ContentType
 from django.core.exceptions import ValidationError

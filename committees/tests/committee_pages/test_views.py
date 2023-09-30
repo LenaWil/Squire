@@ -5,9 +5,11 @@ from django.views.generic import FormView, TemplateView
 
 from committees.committee_pages.views import *
 from committees.committeecollective import CommitteeBaseConfig, registry
-from committees.forms import (AddOrUpdateExternalUrlForm,
-                              AssociationGroupMembershipForm,
-                              DeleteGroupExternalUrlForm)
+from committees.forms import (
+    AddOrUpdateExternalUrlForm,
+    AssociationGroupMembershipForm,
+    DeleteGroupExternalUrlForm,
+)
 from committees.mixins import AssociationGroupMixin, GroupSettingsMixin
 from committees.models import AssociationGroup, GroupExternalUrl
 from committees.tests.committee_pages.utils import AssocationGroupTestingMixin

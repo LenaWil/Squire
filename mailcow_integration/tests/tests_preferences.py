@@ -5,7 +5,9 @@ from dynamic_preferences.types import BasePreferenceType
 from dynamic_preferences.users.registries import user_preferences_registry
 
 from mailcow_integration.dynamic_preferences_registry import (
-    alias_address_to_id, register_preferences)
+    alias_address_to_id,
+    register_preferences,
+)
 
 ##################################################################################
 # Test cases for email preferences

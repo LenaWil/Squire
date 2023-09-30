@@ -7,7 +7,9 @@ from django.utils import dateparse, timezone
 from activity_calendar.constants import ActivityStatus
 from activity_calendar.models import Activity, ActivityMoment
 from activity_calendar.templatetags.activity_tags import (
-    get_next_activity_instances, readable_activity_datetime)
+    get_next_activity_instances,
+    readable_activity_datetime,
+)
 
 from . import mock_now
 

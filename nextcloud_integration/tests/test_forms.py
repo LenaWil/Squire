@@ -1,12 +1,16 @@
 from django.forms import ModelForm
 from django.test import TestCase, override_settings
 
-from nextcloud_integration.forms import (FileEditForm, FileEditFormset,
-                                         FileMoveForm, FolderCreateForm,
-                                         FolderEditForm, FolderEditFormGroup,
-                                         SyncFileToFolderForm)
-from nextcloud_integration.models import (SquireNextCloudFile,
-                                          SquireNextCloudFolder)
+from nextcloud_integration.forms import (
+    FileEditForm,
+    FileEditFormset,
+    FileMoveForm,
+    FolderCreateForm,
+    FolderEditForm,
+    FolderEditFormGroup,
+    SyncFileToFolderForm,
+)
+from nextcloud_integration.models import SquireNextCloudFile, SquireNextCloudFolder
 from utils.testing import FormValidityMixin
 
 from . import *

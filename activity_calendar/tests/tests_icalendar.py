@@ -6,10 +6,13 @@ from django.test.client import RequestFactory
 from django.utils import dateparse, timezone
 
 from activity_calendar.constants import ActivityStatus
-from activity_calendar.feeds import (BirthdayCalendarFeed, CustomCalendarFeed,
-                                     PublicCalendarFeed, get_feed_id)
-from activity_calendar.models import (Activity, ActivityMoment,
-                                      CalendarActivityLink)
+from activity_calendar.feeds import (
+    BirthdayCalendarFeed,
+    CustomCalendarFeed,
+    PublicCalendarFeed,
+    get_feed_id,
+)
+from activity_calendar.models import Activity, ActivityMoment, CalendarActivityLink
 from membership_file.models import Member
 
 

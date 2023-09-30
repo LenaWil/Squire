@@ -5,8 +5,13 @@ from django.urls.base import reverse
 from dynamic_preferences.registries import global_preferences_registry
 
 from core.forms import LoginForm, RegisterForm
-from core.tests.util import (TestAccountUser, TestPublicUser, TestSquireUser,
-                             check_http_response, suppress_warnings)
+from core.tests.util import (
+    TestAccountUser,
+    TestPublicUser,
+    TestSquireUser,
+    check_http_response,
+    suppress_warnings,
+)
 from membership_file.tests.util import TestMemberUser
 
 User = get_user_model()

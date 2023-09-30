@@ -5,8 +5,11 @@ from django.test import RequestFactory, TestCase
 from django.urls import reverse
 
 from membership_file.exceptions import UserIsNotCurrentMember
-from membership_file.util import (MembershipRequiredMixin,
-                                  get_member_from_user, user_is_current_member)
+from membership_file.util import (
+    MembershipRequiredMixin,
+    get_member_from_user,
+    user_is_current_member,
+)
 from utils.testing.view_test_utils import TestMixinMixin
 
 

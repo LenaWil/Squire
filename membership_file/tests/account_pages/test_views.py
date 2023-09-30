@@ -7,8 +7,7 @@ from dynamic_preferences.registries import global_preferences_registry
 global_preferences = global_preferences_registry.manager()
 
 from core.util import get_permission_objects_from_string
-from membership_file.account_pages.views import (MembershipChangeView,
-                                                 MembershipDataView)
+from membership_file.account_pages.views import MembershipChangeView, MembershipDataView
 from membership_file.forms import MemberForm
 from membership_file.models import Member, MemberYear
 from membership_file.util import MembershipRequiredMixin

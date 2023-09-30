@@ -13,8 +13,7 @@ from django.utils.formats import date_format
 from recurrence.fields import RecurrenceField
 
 import activity_calendar.util as util
-from activity_calendar.constants import (ActivityStatus, ActivityType,
-                                         SlotCreationType)
+from activity_calendar.constants import ActivityStatus, ActivityType, SlotCreationType
 from activity_calendar.managers import MeetingManager
 from committees.utils import user_in_association_group
 from core.fields import MarkdownTextField
@@ -277,7 +276,7 @@ class Activity(models.Model):
         if exclude_cancelled:
             activity_moments = activity_moments.exclude(status=ActivityStatus.STATUS_CANCELLED)
 
-        ### Check for activitymoments stored in the database ###
+        # Check for activitymoments stored in the database #
         # Check activity_moment by recurrence id
         next_activity_moment = (
             activity_moments.filter(**{"recurrence_id__gt" + e_ext: dtstart})
@@ -296,7 +295,7 @@ class Activity(models.Model):
             if next_activity_moment is None or local_activity_moment.start_date < next_activity_moment.start_date:
                 next_activity_moment = local_activity_moment
 
-        ### Check for recurrence patterns ###
+        # Check for recurrence patterns #
 
         # Get a list of activity_moments that are not allowed because they have been moved and will therefore
         # already have been detected with the local_start_date search
@@ -550,7 +549,7 @@ class Activity(models.Model):
 
             # EXRULEs (RFC 2445) are deprecated (per RFC 5545)
             if len(r.exrules) > 0:
-                recurrence_errors.append(f"Exclusion Rules are unsupported (Exclusion Dates can still be used)")
+                recurrence_errors.append("Exclusion Rules are unsupported (Exclusion Dates can still be used)")
 
             if recurrence_errors:
                 errors.update({"recurrences": recurrence_errors})

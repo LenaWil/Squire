@@ -7,8 +7,13 @@ from django.test.client import RequestFactory
 
 from core.tests.util import suppress_warnings
 from membership_file.admin import MemberWithLog
-from membership_file.models import (Member, MemberLog, MemberLogField,
-                                    Membership, MemberYear)
+from membership_file.models import (
+    Member,
+    MemberLog,
+    MemberLogField,
+    Membership,
+    MemberYear,
+)
 from membership_file.tests.util import fillDictKeys
 
 ##################################################################################

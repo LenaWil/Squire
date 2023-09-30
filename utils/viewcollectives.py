@@ -3,7 +3,7 @@ from typing import List, Optional, Type
 
 from django.apps import apps
 from django.core.exceptions import PermissionDenied
-from django.urls import include, path, reverse
+from django.urls import path, reverse
 
 __all__ = ["ViewCollectiveConfig", "ViewCollectiveViewMixin", "ViewCollectiveRegistry"]
 
