@@ -224,12 +224,26 @@ class TestActivityOverview(ViewValidityMixin, TestCase):
 
     @patch("django.utils.timezone.now", side_effect=mock_now())
     def test_filter_public(self, mock_tz):
+        self.client.logout()
         response = self.client.get(self.get_base_url(), data={})
-        self.assertNotEqual(len(response.context["activities"]), 0)
+        self.assertGreater(len(response.context["activities"]), 0)
 
         Activity.objects.update(type=ActivityType.ACTIVITY_MEETING)
         response = self.client.get(self.get_base_url(), data={})
         self.assertEqual(len(response.context["activities"]), 0)
+        # also test if works when logged in
+        self.client.force_login(User.objects.get(id=1))
+
+    # Ai generated, todo patch
+    """ @patch("django.utils.timezone.now", side_effect=mock_now())
+    def test_login_meetings(self, mock_tz):
+        ""\"Tests that meetings are not shown to non-logged in users""\"
+        Activity.objects.update(type=ActivityType.ACTIVITY_MEETING)
+        response = self.client.get(self.get_base_url(), data={})
+        self.assertEqual(len(response.context["activities"]), 0)
+
+        response = self.client.get(self.get_base_url(), data={})
+        self.assertEqual(len(response.context["activities"]), 0) """
 
 
 class ActivityMixinTest(TestMixinMixin, TestCase):
