@@ -49,13 +49,14 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "core",  # Core Module should load first
-    "django.contrib.admin",
+    "squire.apps.SquireAdminConfig",  # replaces django.contrib.admin
     # External Libraries
     "bootstrap4",
     "tempus_dominus",  # Bootstrap DateTime picker
     "django_object_actions",  # Dynamic admin panel actions
     "dynamic_preferences",  # Global Preferences
     "dynamic_preferences.users.apps.UserPreferencesConfig",  # Per-user preferences
+    "martor",
     "recurrence",
     "rest_framework",
     # Internal Components
@@ -72,7 +73,6 @@ INSTALLED_APPS = [
     "mailcow_integration",
     # More External Libraries
     "django_cleanup.apps.CleanupConfig",
-    "martor",
     "import_export",
     "pwa",
 ]
@@ -188,8 +188,6 @@ TIME_ZONE = "Europe/Amsterdam"
 
 USE_I18N = True
 
-USE_L10N = True
-
 USE_TZ = True
 
 LOCALE_PATHS = [
@@ -197,7 +195,7 @@ LOCALE_PATHS = [
 ]
 
 # Log Settings
-APPLICATION_LOG_LEVEL = "INFO"
+APPLICATION_LOG_LEVEL = "INFO" if DEBUG else "ERROR"
 
 LOGGING = {
     "version": 1,
@@ -207,11 +205,21 @@ LOGGING = {
             # exact format is not important, this is the minimum information
             "format": "%(asctime)s (%(name)-12s) [%(levelname)s] %(message)s",
         },
+        "file": {
+            "format": "%(asctime)s (%(name)s) [%(levelname)s] %(message)s",
+        },
     },
     "handlers": {
         "console": {
             "class": "logging.StreamHandler",
             "formatter": "console",
+        },
+        "logfile": {
+            "class": "logging.handlers.RotatingFileHandler",
+            "filename": os.path.join(BASE_DIR, "squire", "logs", "squire.log"),
+            "maxBytes": 1024 * 1024 * 5,  # 5MB
+            "backupCount": 1,  # Keep 1 historical versions
+            "formatter": "file",
         },
     },
     "loggers": {
@@ -242,6 +250,10 @@ LOGGING = {
         "mailcow_integration": {
             "handlers": ["console"],
             "level": APPLICATION_LOG_LEVEL,
+        },
+        "mailcow_api": {
+            "handlers": ["console", "logfile"],
+            "level": "WARNING",
         },
     },
 }
@@ -348,7 +360,6 @@ MARTOR_MARKDOWN_EXTENSION_CONFIGS = {}
 MARTOR_ENABLE_LABEL = True
 
 # Markdown urls
-MARTOR_MARKDOWNIFY_URL = "/api/martor/markdownify/"
 # MARTOR_SEARCH_USERS_URL = '/martor/search-user/' # for mention
 
 # Markdown Extensions
@@ -379,7 +390,7 @@ MARKDOWN_IMAGE_MODELS = (
     "roleplaying.roleplayingsystem",
 )
 
-# Maror static overrides
+# Martor static overrides
 MARTOR_ALTERNATIVE_JS_FILE_THEME = None
 MARTOR_ALTERNATIVE_CSS_FILE_THEME = "theming/martor-admin-bootstrap.css"  # default None
 MARTOR_ALTERNATIVE_JQUERY_JS_FILE = None
@@ -406,6 +417,9 @@ SERVER_EMAIL = f"{APPLICATION_NAME} Error <{APPLICATION_NAME.lower()}-error@kotk
 # Default email address to use for various automated correspondence from the site manager(s).
 DEFAULT_FROM_EMAIL = f"{APPLICATION_NAME} <{APPLICATION_NAME.lower()}-noreply@kotkt.nl>"
 
+# Ensure logs directory exists
+os.makedirs(os.path.join(BASE_DIR, "squire", "logs"), exist_ok=True)
+
 # Debug settings
 # Also run the following command to imitate an SMTP server locally: python -m smtpd -n -c DebuggingServer localhost:1025
 # Emails that are sent will be shown in that terminal
@@ -423,7 +437,7 @@ if DEBUG and False:  # pragma: no cover
     from django.utils import timezone
     from datetime import datetime
 
-    timezone.now = lambda: datetime(year=2021, month=9, day=14, hour=21, minute=20, tzinfo=timezone.utc)
+    timezone.now = lambda: datetime(year=2025, month=1, day=10, hour=21, minute=20, tzinfo=timezone.utc)
     print("=====WARNING=====")
     print("timezone.now was overridden")
     print("It will be " + str(timezone.now()) + " until the end of times!")
@@ -463,6 +477,12 @@ PWA_SERVICE_WORKER_PATH = os.path.join(BASE_DIR, "core", "static", "js", "servic
 PWA_APP_DIR = "ltr"
 PWA_APP_LANG = "en-US"
 
+####################################################################
+# The default renderer will change in Django 5.0. This allows early adoption
+# See: https://docs.djangoproject.com/en/4.1/releases/4.1/#form-rendering-accessibility
+FORM_RENDERER = "django.forms.renderers.DjangoDivFormRenderer"
+
+####################################################################
 try:
     from .local_settings import *
 except ImportError:

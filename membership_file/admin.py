@@ -3,7 +3,8 @@ from datetime import datetime
 from django.contrib import admin, messages
 from django_object_actions import DjangoObjectActions, action as object_action
 from import_export.admin import ExportActionMixin
-from import_export.formats.base_formats import CSV, TSV, ODS, XLSX
+from import_export.forms import ExportForm
+from import_export.formats.base_formats import CSV, ODS, TSV, XLSX
 
 from core.admin import DisableModificationsAdminMixin, URLLinkInlineAdminMixin
 from membership_file.forms import AdminMemberForm
@@ -58,13 +59,9 @@ class MemberLogReadOnlyInline(DisableModificationsAdminMixin, URLLinkInlineAdmin
 class MemberWithLog(RequestUserToFormModelAdminMixin, DjangoObjectActions, ExportActionMixin, HideRelatedNameAdmin):
     ##############################
     #  Export functionality
-    resource_class = MemberResource
-    formats = (
-        CSV,
-        XLSX,
-        TSVUnicodeBOM,
-        ODS,
-    )
+    resource_classes = [MemberResource]
+    export_form_class = ExportForm
+    formats = (CSV, XLSX, TSV, ODS)
 
     @object_action(attrs={"class": "addlink"})
     def register_new_member(modeladmin, request, queryset):
@@ -145,6 +142,7 @@ class MemberWithLog(RequestUserToFormModelAdminMixin, DjangoObjectActions, Expor
         "external_card_number",
         "key_id",
     ]
+    search_help_text = "Search for name, email, phone number, TUe/external card number, key ID"
 
     readonly_fields = ["last_updated_by", "last_updated_date"]
 
@@ -164,7 +162,7 @@ class MemberWithLog(RequestUserToFormModelAdminMixin, DjangoObjectActions, Expor
             ('street', 'house_number', 'house_number_addition'), ('postal_code', 'city'), 'country']}),
         ('Room Access', {'fields':
             ['key_id', 'tue_card_number',
-            ('external_card_number', 'external_card_digits', 'external_card_cluster'),
+            ('external_card_number', 'external_card_digits'),
             'external_card_deposit', 'accessible_rooms']}),
         ('Legal Information', {'fields':
             ['educational_institution', 'student_number',
@@ -266,25 +264,38 @@ class MemberLogReadOnly(DisableModificationsAdminMixin, HideRelatedNameAdmin):
 class RoomAdmin(admin.ModelAdmin):
     model = Room
 
-    list_display = ("id", "name", "access")
+    list_display = ("id", "name", "room_number", "access_type", "access_specification")
     list_display_links = ("id", "name")
-    search_fields = ["name", "access"]
-
-    ordering = ("access",)
+    search_fields = ["name", "room_number"]
+    search_help_text = "Search for name, room number"
+    ordering = ("access_type", "access_specification")
     filter_horizontal = ("members_with_access",)
+
+    fieldsets = [
+        (
+            None,
+            {
+                "fields": [
+                    (
+                        "name",
+                        "room_number",
+                    ),
+                    ("access_type", "access_specification"),
+                    "notes",
+                    "members_with_access",
+                ]
+            },
+        ),
+    ]
 
 
 @admin.register(MemberYear)
 class MemberYearAdmin(ExportActionMixin, admin.ModelAdmin):
     ##############################
     #  Export functionality
-    resource_class = MembersFinancialResource
-    formats = (
-        CSV,
-        XLSX,
-        TSVUnicodeBOM,
-        ODS,
-    )
+    resource_classes = [MembersFinancialResource]
+    export_form_class = ExportForm
+    formats = (CSV, XLSX, TSV, ODS)
 
     def has_export_permission(self, request):
         return request.user.has_perm("membership_file.can_export_membership_file")
