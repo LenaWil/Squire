@@ -5,7 +5,7 @@ from django.contrib.auth import get_user_model
 from django.contrib.contenttypes.fields import GenericRelation
 from django.core.validators import MinValueValidator, ValidationError
 from django.db import models
-from django.db.models import Q
+from django.db.models import Q, F
 from django.db.models.base import ModelBase
 from django.utils import timezone
 from django.utils.formats import date_format
@@ -198,6 +198,73 @@ class Activity(models.Model):
 
         # Get the correct activitymoment instances from the database
         activity_moments_between_query = Q(recurrence_id__gte=(start_date - activity_duration)) & Q(
+            recurrence_id__lte=end_date
+        )
+        # Get a list of all activitymoments that due to shift are either
+        # incorrectly included (surplus) or wrongly excluded (extra)
+        surplus_moments, extra_moments = self._get_queries_for_alt_start_time_activity_moments(start_date, end_date)
+
+        # Filter out all activitymoments with an alt start time outside the bounds
+        surplus_moments_queryset = self.activitymoment_set.filter(surplus_moments).values_list(
+            "recurrence_id", flat=True
+        )
+        recurrency_occurences = filter(lambda occ: occ not in surplus_moments_queryset, recurrency_occurences)
+
+        # Filter out removed activities
+        removed_moments_queryset = self.activitymoment_set.filter(status=ActivityStatus.STATUS_REMOVED).values_list(
+            "recurrence_id", flat=True
+        )
+        recurrency_occurences = filter(lambda occ: occ not in removed_moments_queryset, recurrency_occurences)
+
+        # Fetch existing activitymoments
+        #   They must either be within the bounds
+        #   OR be extra ones due to different start/end date(s)
+        query_filter = (activity_moments_between_query | extra_moments) & ~surplus_moments
+        existing_moments = self.activitymoment_set
+        if exclude_removed:
+            existing_moments = existing_moments.exclude(status=ActivityStatus.STATUS_REMOVED)
+        existing_moments = list(existing_moments.filter(query_filter))
+
+        # Get occurrences for which we have no ActivityMoment
+        unstored_recurrency_occurences = filter(
+            lambda occ: all(existing_moment.recurrence_id != occ for existing_moment in existing_moments),
+            recurrency_occurences,
+        )
+
+        # Generate new ActivityMoments for them
+        unstored_recurrency_occurences = map(
+            lambda occ: ActivityMoment(
+                recurrence_id=occ,
+                parent_activity=self,
+            ),
+            unstored_recurrency_occurences,
+        )
+
+        return list(unstored_recurrency_occurences) + existing_moments
+
+    @staticmethod
+    def get_all_activity_moments(start_date, end_date, exclude_removed=True):
+        """ todo change doc
+                Get a list of ActivityMoments, each representing an occurrence of this activity for which
+                any point in that ActivityMoment's duration occurs between the specified start and end date.
+
+                Note that an ActivityMoment is not entirely the same as an occurrence, as an ActivityMoment can
+                have a different start time than the occurrence it represents. This is accounted for.
+
+                :param start_date: The start datetime instance
+                :param end_date: The end datetime instance
+                :param exclude_removed: Whether activitymoments with status removed should not be included (default True)
+                """
+        needed_activities = Activity.objects.filter(published_date__lte=timezone.now(), type=ActivityType.ACTIVITY_PUBLIC)
+        # We should also include activities that start before "start_date", but also end after "start_date"
+        #   (i.e., their start date is before the specified bounds, but their end date is within it).
+        # Any occurrence before (start_date - duration) can never partially take place inside the
+        #   specified time period, so there's no need to look back even further.
+        #activity_duration = self.duration
+        #recurrency_occurences = self.get_occurrences_starting_between(start_date - activity_duration, end_date)
+
+        # Get the correct activitymoment instances from the database
+        activity_moments_between_query = Q(recurrence_id__gte=(start_date - F("parent_activity."))) & Q(
             recurrence_id__lte=end_date
         )
         # Get a list of all activitymoments that due to shift are either
